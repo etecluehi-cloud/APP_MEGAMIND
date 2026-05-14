@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConteudoMat">
+
+    <!-- FOOTER -->
+
+    <View
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_home"
+        android:contentDescription="Início"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toStartOf="@id/footer"
+        app:layout_constraintEnd_toStartOf="@id/btnDesempenho"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <ImageButton
+        android:id="@+id/btnDesempenho"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_desempenho"
+        android:contentDescription="Desempenho"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toEndOf="@id/btnHome"
+        app:layout_constraintEnd_toStartOf="@id/btnBuscar"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <ImageButton
+        android:id="@+id/btnBuscar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_buscar"
+        android:contentDescription="Buscar"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toEndOf="@id/btnDesempenho"
+        app:layout_constraintEnd_toStartOf="@id/btnPerfil"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <ImageButton
+        android:id="@+id/btnPerfil"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_user"
+        android:contentDescription="Perfil"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toEndOf="@id/btnBuscar"
+        app:layout_constraintEnd_toEndOf="@id/footer"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="351dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Conteúdo de Português"
+        android:textColor="#A170FA"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clipToPadding="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

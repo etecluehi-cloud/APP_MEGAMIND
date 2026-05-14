@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="purple_main">#A170FA</color>
+    <color name="purple_dark">#3A1E6C</color>
+    <color name="roxo_claro">#FFAD7FFD</color>
+
+    <color name="roxo_primario">#7B2FBE</color>
+    <color name="roxo_secundario">#9B59B6</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="background_claro">#FFFFFF</color>
+
+    <color name="cor_fundo">#FFFFFF</color>
+    <color name="cor_texto">#212121</color>
+    <color name="cor_card">#FFFFFF</color>
+</resources>

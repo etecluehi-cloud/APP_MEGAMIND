@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Define que estamos criando uma forma personalizada -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Define a cor de fundo da forma (roxo) -->
+    <solid android:color="#673AB7"/>
+
+    <!-- Define quais cantos ficarão arredondados -->
+    <corners
+        android:topLeftRadius="40dp"
+        android:topRightRadius="40dp"/>
+
+</shape>

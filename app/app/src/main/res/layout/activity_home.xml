@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!-- HEADER -->
+
+        <View
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:background="@drawable/bg_top_home"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/txtPontos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins"
+            android:text="⭐ 0 pts"
+
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/lblNomeUsuario"
+            app:layout_constraintTop_toBottomOf="@id/lblNomeUsuario" />
+
+        <TextView
+            android:id="@+id/txtStreak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/poppins"
+            android:text="🔥 0 dias"
+
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/txtPontos"
+            app:layout_constraintTop_toBottomOf="@id/txtPontos" />
+
+    <ImageView
+        android:id="@+id/imgLogo2"
+        android:layout_width="134dp"
+        android:layout_height="164dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_user"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_circulo_roxo"
+        android:padding="3dp"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"/>
+
+    <TextView
+        android:id="@+id/bemvindoa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo(a)"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_bold"
+
+        app:layout_constraintStart_toEndOf="@id/imgPerfil"
+        app:layout_constraintTop_toTopOf="@id/imgPerfil"
+        android:layout_marginStart="8dp"/>
+
+    <TextView
+        android:id="@+id/lblNomeUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome do estudante"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/poppins"
+
+        app:layout_constraintStart_toEndOf="@id/imgPerfil"
+        app:layout_constraintTop_toBottomOf="@id/bemvindoa"
+        android:layout_marginStart="8dp"/>
+
+
+
+    <ImageButton
+        android:id="@+id/btnMenu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_menu"
+        android:contentDescription="Menu"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintTop_toBottomOf="@id/imgPerfil"
+        app:layout_constraintStart_toStartOf="@id/imgPerfil"
+        android:layout_marginTop="8dp"/>
+
+    <!-- TITULO -->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conteúdos"
+        android:textColor="#A170FA"
+        android:textSize="26sp"
+        android:fontFamily="@font/poppins_bold"
+
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"/>
+
+    <!-- LINHA 1 -->
+
+    <ImageView
+        android:id="@+id/btnConteudoMat"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_botao_conteudo"
+        android:padding="16dp"
+        android:src="@drawable/ic_calculadora"
+        app:tint="@android:color/white"
+        android:contentDescription="Conteúdo de Matemática"
+
+        app:layout_constraintTop_toBottomOf="@id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnConteudoPort"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="24dp"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"/>
+
+    <ImageView
+        android:id="@+id/btnConteudoPort"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_botao_conteudo"
+        android:padding="16dp"
+        android:src="@drawable/ic_livro"
+        app:tint="@android:color/white"
+        android:contentDescription="Conteúdo de Português"
+
+        app:layout_constraintTop_toTopOf="@id/btnConteudoMat"
+        app:layout_constraintStart_toEndOf="@id/btnConteudoMat"
+        app:layout_constraintEnd_toStartOf="@id/btnRedacao"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"/>
+
+    <ImageView
+        android:id="@+id/btnRedacao"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_botao_conteudo"
+        android:padding="16dp"
+        android:src="@drawable/ic_redacao"
+        app:tint="@android:color/white"
+        android:contentDescription="Conteúdo de Redação"
+
+        app:layout_constraintTop_toTopOf="@id/btnConteudoMat"
+        app:layout_constraintStart_toEndOf="@id/btnConteudoPort"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"/>
+
+    <!-- TEXTOS LINHA 1 -->
+
+    <TextView
+        android:id="@+id/txtConteudoMat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Conteúdo\nMatemática"
+
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/btnConteudoMat"
+        app:layout_constraintStart_toStartOf="@id/btnConteudoMat"
+        app:layout_constraintTop_toBottomOf="@id/btnConteudoMat" />
+
+    <TextView
+        android:id="@+id/txtConteudoPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Conteúdo\nPortuguês"
+
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/btnConteudoPort"
+        app:layout_constraintStart_toStartOf="@id/btnConteudoPort"
+        app:layout_constraintTop_toBottomOf="@id/btnConteudoPort" />
+
+    <TextView
+        android:id="@+id/txtRedacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Conteúdo\nRedação"
+
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/btnRedacao"
+        app:layout_constraintStart_toStartOf="@id/btnRedacao"
+        app:layout_constraintTop_toBottomOf="@id/btnRedacao" />
+
+    <!-- LINHA 2 -->
+
+    <ImageView
+        android:id="@+id/btnQuestMat"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_botao_conteudo"
+        android:padding="16dp"
+        android:src="@drawable/ic_questoesmat"
+        app:tint="@android:color/white"
+        android:contentDescription="Questões de Matemática"
+
+        app:layout_constraintTop_toBottomOf="@id/txtConteudoMat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnQuestPort"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="32dp"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"/>
+
+    <ImageView
+        android:id="@+id/btnQuestPort"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:background="@drawable/bg_botao_conteudo"
+        android:padding="16dp"
+        android:src="@drawable/ic_questoesport"
+        app:tint="@android:color/white"
+        android:contentDescription="Questões de Português"
+
+        app:layout_constraintTop_toTopOf="@id/btnQuestMat"
+        app:layout_constraintStart_toEndOf="@id/btnQuestMat"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"/>
+
+    <!-- TEXTOS LINHA 2 -->
+
+    <TextView
+        android:id="@+id/txtQuestMat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Questões\nMatemática"
+
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/btnQuestMat"
+        app:layout_constraintStart_toStartOf="@id/btnQuestMat"
+        app:layout_constraintTop_toBottomOf="@id/btnQuestMat" />
+
+    <TextView
+        android:id="@+id/txtQuestPort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Questões\nPortuguês"
+
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@id/btnQuestPort"
+        app:layout_constraintStart_toStartOf="@id/btnQuestPort"
+        app:layout_constraintTop_toBottomOf="@id/btnQuestPort" />
+
+    <!-- FOOTER -->
+
+    <View
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnHome"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_home"
+        android:contentDescription="Início"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toStartOf="@id/footer"
+        app:layout_constraintEnd_toStartOf="@id/btnDesempenho"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <ImageButton
+        android:id="@+id/btnDesempenho"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_desempenho"
+        android:contentDescription="Desempenho"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toEndOf="@id/btnHome"
+        app:layout_constraintEnd_toStartOf="@id/btnBuscar"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <ImageButton
+        android:id="@+id/btnBuscar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_buscar"
+        android:contentDescription="Buscar"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toEndOf="@id/btnDesempenho"
+        app:layout_constraintEnd_toStartOf="@id/btnPerfil"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+    <ImageButton
+        android:id="@+id/btnPerfil"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_user"
+        android:contentDescription="Perfil"
+        app:tint="@color/icone_selecionado"
+
+        app:layout_constraintBottom_toBottomOf="@id/footer"
+        app:layout_constraintStart_toEndOf="@id/btnBuscar"
+        app:layout_constraintEnd_toEndOf="@id/footer"
+        app:layout_constraintTop_toTopOf="@id/footer"/>
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="58dp"
+            android:text="voltar tela login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtQuestMat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/menu_lateral"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

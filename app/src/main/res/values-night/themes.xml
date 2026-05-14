@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/cor_fundo</item>
+        <item name="android:textColor">@color/cor_texto</item>
+        <item name="colorSurface">@color/cor_card</item>
+    </style>
+</resources>

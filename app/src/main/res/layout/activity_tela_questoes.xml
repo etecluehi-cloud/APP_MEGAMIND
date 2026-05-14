@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- CABEÇALHO ROXO -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#7B2FBE"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/txtTituloConteudo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Título do Conteúdo"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <!-- CONTADOR DE QUESTÃO -->
+    <TextView
+        android:id="@+id/txtContador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Questão 1 de 5"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#7B2FBE"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="6dp"
+        android:background="@drawable/bg_contador" />
+
+    <!-- ENUNCIADO -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/txtEnunciado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enunciado da questão aparece aqui..."
+            android:textSize="15sp"
+            android:textColor="#333333"
+            android:lineSpacingExtra="4dp" />
+
+    </ScrollView>
+
+    <!-- ÁREA DAS ALTERNATIVAS + FEEDBACK + PRÓXIMA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="8dp">
+
+        <!-- FEEDBACK (acerto/erro) -->
+        <TextView
+            android:id="@+id/txtFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Resposta correta!"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <!-- ALTERNATIVA A -->
+        <Button
+            android:id="@+id/btnA"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="A)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#7B2FBE" />
+
+        <!-- ALTERNATIVA B -->
+        <Button
+            android:id="@+id/btnB"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="B)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#7B2FBE" />
+
+        <!-- ALTERNATIVA C -->
+        <Button
+            android:id="@+id/btnC"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="C)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#7B2FBE" />
+
+        <!-- ALTERNATIVA D -->
+        <Button
+            android:id="@+id/btnD"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="D)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#7B2FBE" />
+
+        <!-- ALTERNATIVA E -->
+        <Button
+            android:id="@+id/btnE"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:text="E)"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:backgroundTint="#7B2FBE" />
+
+        <!-- BOTÃO PRÓXIMA QUESTÃO -->
+        <Button
+            android:id="@+id/btnProxima"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:text="Próxima Questão"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FF9800"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

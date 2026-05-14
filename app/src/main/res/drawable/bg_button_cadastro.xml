@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Selector do botão Cadastro -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Quando está pressionado -->
+    <item android:state_pressed="true">
+        <shape>
+            <!-- Fundo levemente roxo quando clica -->
+            <solid android:color="#3A1E6C"/>
+
+            <!-- Borda branca -->
+            <stroke
+                android:width="2dp"
+                android:color="@android:color/white"/>
+
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+
+    <!-- Estado normal -->
+    <item>
+        <shape>
+            <!-- Fundo transparente -->
+            <solid android:color="@android:color/transparent"/>
+
+            <!-- Borda branca -->
+            <stroke
+                android:width="4dp"
+                android:color="@android:color/white"/>
+
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+
+</selector>

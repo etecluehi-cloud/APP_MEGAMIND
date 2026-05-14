@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Muda aparência dependendo do estado -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Quando o botão está pressionado -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#3A1E6C"/> <!-- roxo mais escuro -->
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+
+    <!-- Estado normal -->
+    <item>
+        <shape>
+            <solid android:color="#A170FA"/> <!-- roxo normal -->
+            <corners android:radius="30dp"/>
+        </shape>
+    </item>
+
+</selector>

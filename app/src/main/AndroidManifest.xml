@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+        <activity
+            android:name=".teste"
+            android:exported="false" />
+        <activity
+            android:name=".TelaResultado"
+            android:exported="false" />
+        <activity
+            android:name=".SobreNos"
+            android:exported="false" />
+        <activity
+            android:name=".MetaDiaria"
+            android:exported="false" />
+        <activity
+            android:name=".TelaSecaoConteudoPort"
+            android:exported="false" />
+        <activity
+            android:name=".detalhes_conteudos"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".Desempenho"
+            android:exported="false" />
+        <activity
+            android:name=".Buscar"
+            android:exported="false" />
+        <activity
+            android:name=".ConteudoRed"
+            android:exported="false" />
+        <activity
+            android:name=".TelaSecaoConteudoMat"
+            android:exported="false" />
+        <activity
+            android:name=".AvaliarApp"
+            android:exported="false" />
+        <activity
+            android:name=".Duvidas"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRecuperarSenhaEmail"
+            android:exported="false" />
+        <activity
+            android:name=".TelaLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false" />
+        <activity
+            android:name=".TelaQuestoes"
+            android:exported="false" />
+        <activity
+            android:name=".TelaSecaoQuestoesMat"
+            android:exported="false" />
+        <activity
+            android:name=".TelaCadastro"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
