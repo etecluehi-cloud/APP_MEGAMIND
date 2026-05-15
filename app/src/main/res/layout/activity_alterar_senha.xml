@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header roxo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#7B2FBE"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="16dp">
+
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="#FFFFFF"
+                android:contentDescription="Voltar" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Alterar senha"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginEnd="40dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Senha atual -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SENHA ATUAL"
+                android:textColor="#7B2FBE"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_campo_senha"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:id="@+id/edtSenhaAtual"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Digite sua senha atual"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="12dp"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/btnOlhoAtual"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Mostrar senha"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="#AAAAAA" />
+
+            </LinearLayout>
+
+            <!-- Nova senha -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NOVA SENHA"
+                android:textColor="#7B2FBE"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_campo_senha"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/edtNovaSenha"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Digite a nova senha"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="12dp"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/btnOlhoNova"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:src="@android:drawable/ic_menu_view"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="#AAAAAA"
+                    android:contentDescription="Mostrar nova senha" />
+
+            </LinearLayout>
+
+            <!-- Barra de força -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+
+                <View android:id="@+id/bar1" android:layout_width="0dp" android:layout_height="5dp" android:layout_weight="1" android:background="#DDDDDD" android:layout_marginEnd="3dp" />
+                <View android:id="@+id/bar2" android:layout_width="0dp" android:layout_height="5dp" android:layout_weight="1" android:background="#DDDDDD" android:layout_marginEnd="3dp" />
+                <View android:id="@+id/bar3" android:layout_width="0dp" android:layout_height="5dp" android:layout_weight="1" android:background="#DDDDDD" android:layout_marginEnd="3dp" />
+                <View android:id="@+id/bar4" android:layout_width="0dp" android:layout_height="5dp" android:layout_weight="1" android:background="#DDDDDD" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtForcaSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="11sp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Confirmar nova senha -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMAR NOVA SENHA"
+                android:textColor="#7B2FBE"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_campo_senha"
+                android:layout_marginBottom="24dp">
+
+                <EditText
+                    android:id="@+id/edtConfirmarSenha"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="Confirme a nova senha"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="14dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="12dp"
+                    android:textSize="14sp" />
+
+                <ImageButton
+                    android:id="@+id/btnOlhoConfirmar"
+                    android:layout_width="54dp"
+                    android:layout_height="54dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Mostrar confirmação"
+                    android:src="@android:drawable/ic_menu_view"
+                    app:tint="#AAAAAA" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSalvarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Salvar nova senha"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:backgroundTint="#7B2FBE"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

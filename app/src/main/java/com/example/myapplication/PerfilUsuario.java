@@ -135,6 +135,11 @@ public class PerfilUsuario extends AppCompatActivity
                     }
                 });
 
+        // Butaoo EditarPerfil
+        findViewById(R.id.btnEditar).setOnClickListener(v -> {
+            startActivity(new Intent(this, EditarPerfil.class));
+        });
+
         // Butao de sair da conta
         lnlSairConta.setOnClickListener(view -> {
             new AlertDialog.Builder(this)
