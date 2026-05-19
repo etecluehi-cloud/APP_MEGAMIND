@@ -186,7 +186,7 @@ public class PerfilUsuario extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent it = new Intent(PerfilUsuario.this, Buscar.class);
+                Intent it = new Intent(PerfilUsuario.this, Curso.Buscar.class);
                 startActivity(it);
             }
         });

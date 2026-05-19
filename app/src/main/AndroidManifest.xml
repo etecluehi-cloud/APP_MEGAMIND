@@ -16,6 +16,15 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ChatBot"
+            android:exported="false" />
+        <activity
+            android:name=".Notas"
+            android:exported="false" />
+        <activity
+            android:name=".TelaRedacao"
+            android:exported="false" />
+        <activity
             android:name=".teste"
             android:exported="false" />
         <activity
@@ -40,7 +49,7 @@
             android:name=".Desempenho"
             android:exported="false" />
         <activity
-            android:name=".Buscar"
+            android:name=".Curso$Buscar"
             android:exported="false" />
         <activity
             android:name=".ConteudoRed"
