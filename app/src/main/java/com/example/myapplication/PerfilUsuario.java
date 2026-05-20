@@ -13,10 +13,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -31,10 +34,12 @@ public class PerfilUsuario extends AppCompatActivity
 
     // 1) atributos
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
+    ImageView imgPerfil;
     TextView txtNome, txtEmail, txtPontos, txtDias;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     LinearLayout lnlSairConta, lnlSobreNos;
+    MaterialButton btnEditar;
     Switch switchModoEscuro;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -57,6 +62,9 @@ public class PerfilUsuario extends AppCompatActivity
         btnDesempenho = (ImageButton) findViewById(R.id.btnDesempenho);
         btnBuscar = (ImageButton) findViewById(R.id.btnBuscar);
         btnPerfil = (ImageButton) findViewById(R.id.btnPerfil);
+        btnEditar = (MaterialButton) findViewById(R.id.btnEditar);
+
+        imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
         String userId = mAuth.getCurrentUser().getUid();
 
@@ -132,6 +140,16 @@ public class PerfilUsuario extends AppCompatActivity
                     if (document.exists()){
                         txtNome.setText(document.getString("nome"));
                         txtEmail.setText(document.getString("email"));
+
+                        String foto = document.getString("fotoPerfil");
+
+                        if (foto != null && !foto.isEmpty())
+                        {
+                            Glide.with(this)
+                                    .load(foto)
+                                    .circleCrop()
+                                    .into(imgPerfil);
+                        }
                     }
                 });
 
@@ -197,6 +215,14 @@ public class PerfilUsuario extends AppCompatActivity
             public void onClick(View view)
             {
                 Intent it = new Intent(PerfilUsuario.this, PerfilUsuario.class);
+                startActivity(it);
+            }
+        });
+
+        btnEditar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(PerfilUsuario.this, EditarPerfil.class);
                 startActivity(it);
             }
         });

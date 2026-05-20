@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,7 +23,7 @@ public class Home extends AppCompatActivity
     //mudança
 
     // 1) atributos
-    ImageView btnConteudoMat, btnConteudoPort, btnRedacao, btnQuestMat, btnQuestPort;
+    ImageView btnConteudoMat, btnConteudoPort, btnRedacao, btnQuestMat, btnQuestPort, imgPerfil;
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
     TextView txtPontos, txtStreak, txtNomeU;
     DrawerLayout drawer;  // controla o abrir/fechar do menu
@@ -49,6 +50,8 @@ public class Home extends AppCompatActivity
         btnRedacao = (ImageView) findViewById(R.id.btnRedacao);
         btnQuestMat = (ImageView) findViewById(R.id.btnQuestMat);
         btnQuestPort = (ImageView) findViewById(R.id.btnQuestPort);
+
+        imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
         btnHome = (ImageButton) findViewById(R.id.btnHome);
         btnDesempenho = (ImageButton) findViewById(R.id.btnDesempenho);
@@ -195,8 +198,19 @@ public class Home extends AppCompatActivity
                         if (documentSnapshot.exists())
                         {
                             String nome = documentSnapshot.getString("nome");
+                            String foto = documentSnapshot.getString("fotoPerfil");
 
                             txtNomeU.setText(nome);
+
+                            // Carrega a foto se existir
+                            if (foto != null && !foto.isEmpty()) {
+                                Glide.with(this)
+                                        .load(foto)
+                                        .circleCrop()
+                                        .placeholder(R.drawable.ic_user) // ícone enquanto carrega
+                                        .error(R.drawable.ic_user)       // ícone se der erro
+                                        .into(imgPerfil);            // seu ImageView
+                            }
                         }
                     });
         }
