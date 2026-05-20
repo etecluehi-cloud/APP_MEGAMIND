@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,8 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.firestore.index.IndexEntry;
 
 import java.util.List;
 
@@ -74,6 +77,16 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.ViewHolder> 
 
         // atualiza a barra de progresso com a porcentagem calculada
         holder.barra.setProgress(prog);
+
+        // clique no card
+        holder.itemView.setOnClickListener(v -> {
+
+            Intent it = new Intent(v.getContext(), detalhes_conteudos.class);
+
+            it.putExtra("conteudoId", c.getConteudoId());
+
+            v.getContext().startActivity(it);
+        });
     }
 
     // retorna o total de itens na lista (necessário para o RecyclerView funcionar)

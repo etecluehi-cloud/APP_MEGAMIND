@@ -7,13 +7,16 @@ public class Curso {
     private String nome; // nome do conteúdo
     private int totalAulas; // total de aulas desse conteúdo
     private int aulasAssistidas; // quantas aulas o usuário já assistiu
+    private String conteudoId;
 
     // Construtor - usado para criar um novo objeto Curso com os dados
-    public Curso(String nome, int totalAulas, int aulasAssistidas)
+    public Curso(String nome, int totalAulas, int aulasAssistidas,
+                 String conteudoId)
     {
         this.nome = nome;
         this.totalAulas = totalAulas;
         this.aulasAssistidas = aulasAssistidas;
+        this.conteudoId = conteudoId;
     }
 
     // getters -> permitem ler os valores de fora da classe
@@ -29,6 +32,10 @@ public class Curso {
         {
             return aulasAssistidas;
         }
+    public String getConteudoId()
+    {
+        return conteudoId;
+    }
 
     // setter - permite atualizar as aulas assistidas
     public void setAulasAssistidas(int aulasAssistidas)

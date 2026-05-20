@@ -27,11 +27,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/poppins_medium"
             android:text="Sobre este conteúdo"
             android:textColor="@color/roxo_primario"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+            android:textStyle="bold" />
 
         <!-- Linha decorativa roxa -->
         <View
@@ -48,11 +49,12 @@
             android:id="@+id/txtResumo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:lineSpacingMultiplier="1.6"
             android:text="Carregando resumo..."
             android:textColor="?android:attr/textColorPrimary"
-            android:textSize="15sp"
-            android:lineSpacingMultiplier="1.6"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            android:textSize="15sp" />
 
     </LinearLayout>
 

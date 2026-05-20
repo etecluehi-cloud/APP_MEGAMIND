@@ -19,7 +19,7 @@ public class ConteudoRed extends AppCompatActivity
     RecyclerView recyclerView; // lista visual em grade de cards
     List<Curso> lista; // lista de cursos que será exibida
     CursoAdapter adapter; // adapter que conecta a lista ao RecyclerView
-    ImageButton btnHome;
+    ImageButton btnVoltar;
 
 
 
@@ -29,7 +29,7 @@ public class ConteudoRed extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conteudo_red);
 
-        btnHome = (ImageButton) findViewById(R.id.btnHome);
+        btnVoltar = (ImageButton) findViewById(R.id.btnVoltar);
 
         // ligar com o xml
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -37,13 +37,20 @@ public class ConteudoRed extends AppCompatActivity
         // substituir essa simulação por dados reais do banco de dados (back-end)
         // criar lista - SIMULAÇÃO
         lista = new ArrayList<>();
-        lista.add(new Curso("Estrutura do Texto", 3, 1));
-        lista.add(new Curso("Tipologia Textual", 2, 0));
-        lista.add(new Curso("Cpmpetências da Redação do ENEM", 5, 3));
-        lista.add(new Curso("Argumentação", 4, 0));
-        lista.add(new Curso("Proposta de Intervenção", 5, 2));
-        lista.add(new Curso("Temas Sociais Frequentes", 7, 1));
-        lista.add(new Curso("Erros Que Zeram ou Diminuem a Nota", 4, 0));
+        lista.add(new Curso("Estrutura do Texto", 3, 1,
+                "estrutura_texto"));
+        lista.add(new Curso("Tipologia Textual", 2, 0,
+                "tipologia_textual"));
+        lista.add(new Curso("Cpmpetências da Redação do ENEM", 5, 3,
+                "competencias_red_enem"));
+        lista.add(new Curso("Argumentação", 4, 0,
+                "argumentacao"));
+        lista.add(new Curso("Proposta de Intervenção", 5, 2,
+                "proposta_intervencao"));
+        lista.add(new Curso("Temas Sociais Frequentes", 7, 1,
+                "temas_sociais"));
+        lista.add(new Curso("Erros Que Zeram ou Diminuem a Nota", 4, 0,
+                "erros_redacao"));
 
         // adapter
         adapter = new CursoAdapter(lista);
@@ -54,7 +61,7 @@ public class ConteudoRed extends AppCompatActivity
         // conectar adapter
         recyclerView.setAdapter(adapter);
 
-        btnHome.setOnClickListener(new View.OnClickListener() {
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(ConteudoRed.this, Home.class);

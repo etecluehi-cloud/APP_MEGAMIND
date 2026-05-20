@@ -35,15 +35,16 @@
             android:id="@+id/txtTituloDetalhe"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
             android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:maxLines="1"
             android:text="Geometria Plana"
             android:textColor="@color/branco"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginEnd="40dp"
-            android:maxLines="1"
-            android:ellipsize="end" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -92,11 +93,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="Sobre este conteúdo"
                 android:textColor="@color/roxo_primario"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
+                android:textStyle="bold" />
 
             <!-- Linha decorativa roxa -->
             <View
@@ -110,11 +112,12 @@
                 android:id="@+id/txtResumo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:lineSpacingMultiplier="1.6"
                 android:text="Carregando resumo..."
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="15sp"
-                android:lineSpacingMultiplier="1.6"
-                android:textIsSelectable="true" />
+                android:textIsSelectable="true"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
@@ -141,22 +144,24 @@
             android:id="@+id/checkVisto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Marcar como visto"
-            android:textSize="15sp"
-            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginBottom="12dp"
             android:buttonTint="@color/roxo_primario"
-            android:layout_marginBottom="12dp" />
+            android:fontFamily="@font/poppins"
+            android:text="Marcar como visto"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btnQuestoes"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:backgroundTint="@color/roxo_primario"
+            android:enabled="false"
+            android:fontFamily="@font/poppins_medium"
             android:text="Responder Questões"
             android:textColor="@color/branco"
             android:textSize="15sp"
             android:textStyle="bold"
-            android:enabled="false"
-            android:backgroundTint="@color/roxo_primario"
             app:cornerRadius="12dp" />
 
     </LinearLayout>
