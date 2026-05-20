@@ -58,6 +58,8 @@ dependencies {
     // RecyclerView (lista de notas)
     implementation("androidx.recyclerview:recyclerview:1.3.2")
 
+    implementation("com.google.firebase:firebase-functions:20.4.0")
+
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
