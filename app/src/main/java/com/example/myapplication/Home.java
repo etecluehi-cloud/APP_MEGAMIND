@@ -7,7 +7,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -137,7 +136,7 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent it = new Intent(Home.this, Buscar.class);
+                Intent it = new Intent(Home.this, Curso.Buscar.class);
                 startActivity(it);
             }
         });

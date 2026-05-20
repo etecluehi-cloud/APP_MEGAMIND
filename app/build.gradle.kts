@@ -43,6 +43,23 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
 
+    // Firestore (banco de dados)
+    implementation("com.google.firebase:firebase-firestore:25.1.1")
+
+    // Auth (login do usuário)
+    implementation("com.google.firebase:firebase-auth:23.2.0")
+
+    // Firebase AI Logic (Gemini - chatbot)
+    implementation("com.google.firebase:firebase-ai:16.0.0")
+
+    // Material Design (botões, FAB)
+    implementation("com.google.android.material:material:1.12.0")
+
+    // RecyclerView (lista de notas)
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    implementation("com.google.firebase:firebase-functions:20.4.0")
+
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
 
