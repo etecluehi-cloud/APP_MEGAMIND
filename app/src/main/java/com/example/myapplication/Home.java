@@ -80,6 +80,15 @@ public class Home extends AppCompatActivity
         txtPontos.setText("⭐ " + g.getPontos() + " pts");
         txtStreak.setText("🔥 " + g.getStreak() + " dias");
 
+        // Imagem de perfil leva para tela editar perfil
+        imgPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(Home.this, EditarPerfil.class);
+                startActivity(it);
+            }
+        });
+
 
         // eventos do botoes de conteudo
         btnConteudoMat.setOnClickListener(new View.OnClickListener()
