@@ -81,17 +81,14 @@ public class TelaQuestoes extends AppCompatActivity {
                         String titulo = documento.getString("titulo");
                         txtTituloConteudo.setText(titulo != null ? titulo : conteudoId);
 
-                        Map<String, Object> questoesRaw =
-                                (Map<String, Object>) documento.get("questoes");
+                        List<Map<String, Object>> questoesRaw =
+                                (List<Map<String, Object>>) documento.get("questoes");
 
                         if (questoesRaw != null && !questoesRaw.isEmpty()) {
 
                             List<Questao> todasQuestoes = new ArrayList<>();
 
-                            for (Object obj : questoesRaw.values()) {
-
-                                Map<String, Object> q = (Map<String, Object>) obj;
-
+                            for (Map<String, Object> q : questoesRaw) {  // ✅ itera direto
                                 todasQuestoes.add(new Questao(
                                         (String) q.get("enunciado"),
                                         (String) q.get("alternativa_a"),
@@ -102,9 +99,10 @@ public class TelaQuestoes extends AppCompatActivity {
                                         (String) q.get("resposta_correta")
                                 ));
                             }
+
                             Collections.shuffle(todasQuestoes);
                             int quantidade = Math.min(MAX_QUESTOES, todasQuestoes.size());
-                            listaQuestoes = todasQuestoes.subList(0, quantidade);
+                            listaQuestoes = new ArrayList<>(todasQuestoes.subList(0, quantidade));
 
                             exibirQuestao(indiceAtual);
 

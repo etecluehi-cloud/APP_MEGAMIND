@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Questao extends AppCompatActivity
+public class Questao
 {
     private String enunciado;
     private String alternativa_a;
