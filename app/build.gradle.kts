@@ -66,9 +66,12 @@ dependencies {
 
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
-
-    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
+    implementation("com.google.firebase:firebase-storage")
 
     implementation("androidx.work:work-runtime:2.8.1")
+
+    // Permite selecionar uma foto da galeria
+    implementation("com.github.yalantis:ucrop:2.2.8")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
 
