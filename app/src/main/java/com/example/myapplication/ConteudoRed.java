@@ -34,23 +34,43 @@ public class ConteudoRed extends AppCompatActivity
         // ligar com o xml
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        // substituir essa simulação por dados reais do banco de dados (back-end)
-        // criar lista - SIMULAÇÃO
+        // lista
         lista = new ArrayList<>();
-        lista.add(new Curso("Estrutura do Texto", 3, 1,
-                "estrutura_texto"));
-        lista.add(new Curso("Tipologia Textual", 2, 0,
-                "tipologia_textual"));
-        lista.add(new Curso("Cpmpetências da Redação do ENEM", 5, 3,
-                "competencias_red_enem"));
-        lista.add(new Curso("Argumentação", 4, 0,
-                "argumentacao"));
-        lista.add(new Curso("Proposta de Intervenção", 5, 2,
-                "proposta_intervencao"));
-        lista.add(new Curso("Temas Sociais Frequentes", 7, 1,
-                "temas_sociais"));
-        lista.add(new Curso("Erros Que Zeram ou Diminuem a Nota", 4, 0,
-                "erros_redacao"));
+
+        lista.add(new Curso(
+                "Estrutura do Texto",
+                "estrutura_texto",
+                false));
+
+        lista.add(new Curso(
+                "Tipologia Textual",
+                "tipologia_textual",
+                false));
+
+        lista.add(new Curso(
+                "Competências da Redação do ENEM",
+                "competencias_red_enem",
+                false));
+
+        lista.add(new Curso(
+                "Argumentação",
+                "argumentacao",
+                false));
+
+        lista.add(new Curso(
+                "Proposta de Intervenção",
+                "proposta_intervencao",
+                false));
+
+        lista.add(new Curso(
+                "Temas Sociais Frequentes",
+                "temas_sociais",
+                false));
+
+        lista.add(new Curso(
+                "Erros Que Zeram ou Diminuem a Nota",
+                "erros_redacao",
+                false));
 
         // adapter
         adapter = new CursoAdapter(lista);

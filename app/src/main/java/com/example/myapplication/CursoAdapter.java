@@ -5,8 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.ProgressBar;
+import android.graphics.Color;
 
+import androidx.cardview.widget.CardView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,18 +32,14 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.ViewHolder> 
 
         // componentes visuais de cada card
         TextView titulo; // nome do conteúdo
-        TextView aulas; // total de aulas
-        TextView progresso; // progresso escrito
-        ProgressBar barra; // barra de progresso
+        CardView cardView;
 
         public ViewHolder(View itemView)
         {
             super(itemView);
             // ligando cada variável com seu respectivo elemento do XML (item_card.xml)
             titulo = itemView.findViewById(R.id.txtTitulo);
-            aulas = itemView.findViewById(R.id.txtAulas);
-            progresso = itemView.findViewById(R.id.txtProgresso);
-            barra = itemView.findViewById(R.id.progressBar);
+            cardView = itemView.findViewById(R.id.cardView);
         }
     }
 
@@ -66,17 +63,7 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.ViewHolder> 
 
         // preenche os textos do card com os dados do curso
         holder.titulo.setText(c.getNome());
-        holder.aulas.setText(c.getTotalAulas() + " aulas");
-        holder.progresso.setText(c.getAulasAssistidas() + " de " + c.getTotalAulas());
 
-        // calcula a porcentagem de progresso (0 a 100)
-        // verifica se totalAulas > 0 para evitar divisão por zero
-        int prog = c.getTotalAulas() > 0
-                ? (int)((c.getAulasAssistidas() * 100.0f) / c.getTotalAulas())
-                : 0;
-
-        // atualiza a barra de progresso com a porcentagem calculada
-        holder.barra.setProgress(prog);
 
         // clique no card
         holder.itemView.setOnClickListener(v -> {
@@ -87,6 +74,21 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.ViewHolder> 
 
             v.getContext().startActivity(it);
         });
+
+        if(c.isVisto())
+        {
+            holder.cardView.setCardBackgroundColor(
+                    Color.parseColor("#7B2FBE"));
+
+            holder.titulo.setTextColor(Color.WHITE);
+        }
+        else
+        {
+            holder.cardView.setCardBackgroundColor(
+                    Color.WHITE);
+
+            holder.titulo.setTextColor(Color.BLACK);
+        }
     }
 
     // retorna o total de itens na lista (necessário para o RecyclerView funcionar)

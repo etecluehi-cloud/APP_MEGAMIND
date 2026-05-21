@@ -4,8 +4,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    android:id="@+id/cardView"
+
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="120dp"
     android:layout_margin="8dp"
 
     app:cardCornerRadius="12dp"
@@ -13,59 +15,28 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:padding="16dp">
 
         <!-- titulo -->
         <TextView
             android:id="@+id/txtTitulo"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:fontFamily="@font/poppins_bold"
             android:text="Matemática"
-            android:textSize="18sp"
-            android:textStyle="bold"
+            android:textSize="15sp"
 
-            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:breakStrategy="simple"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-
-        <!-- total de aulas -->
-        <TextView
-            android:id="@+id/txtAulas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="5 aulas"
-            android:textSize="12sp"
-
-            app:layout_constraintTop_toBottomOf="@id/txtTitulo"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="4dp"/>
-
-        <!-- progresso escrito -->
-        <TextView
-            android:id="@+id/txtProgresso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2 de 5"
-            android:textSize="12sp"
-
-            app:layout_constraintTop_toBottomOf="@id/txtAulas"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="4dp"/>
-
-        <!-- barra -->
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="0dp"
-            android:layout_height="8dp"
-            android:max="100"
-            android:progress="30"
-            android:layout_marginTop="8dp"
-            android:progressTint="#A170FA"
-            app:layout_constraintTop_toBottomOf="@id/txtProgresso"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
