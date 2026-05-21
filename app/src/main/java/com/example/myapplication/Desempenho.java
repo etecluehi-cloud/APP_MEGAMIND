@@ -51,7 +51,7 @@ public class Desempenho extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent it = new Intent(Desempenho.this, Curso.Buscar.class);
+                Intent it = new Intent(Desempenho.this, Curso.class);
                 startActivity(it);
             }
         });

@@ -136,7 +136,7 @@ public class Home extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent it = new Intent(Home.this, Curso.Buscar.class);
+                Intent it = new Intent(Home.this, Curso.class);
                 startActivity(it);
             }
         });
