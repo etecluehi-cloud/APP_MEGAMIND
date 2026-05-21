@@ -14,5 +14,6 @@
 
     <color name="cor_fundo">#FFFFFF</color>
     <color name="cor_texto">#212121</color>
+    <color name="icone_selecionado">#FF9800</color>
     <color name="cor_card">#FFFFFF</color>
 </resources>

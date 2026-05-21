@@ -76,7 +76,7 @@ public class TelaRedacao extends AppCompatActivity {
         btnVoltar.setOnClickListener(v -> finish());
 
         btnNotas.setOnClickListener(v -> {
-            Intent intent = new Intent(TelaRedacao.this, NotasActivity.class);
+            Intent intent = new Intent(TelaRedacao.this, Notas.class);
             startActivity(intent);
         });
 
