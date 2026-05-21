@@ -12,14 +12,18 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class TelaSecaoConteudoMat extends AppCompatActivity {
 
-    //10 atributos
+    //1) atributos
     RecyclerView recyclerView;
     List<Curso> lista;
     CursoAdapter adapter;
     ImageButton btnVoltar;
-
+    FirebaseFirestore db;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,37 +36,64 @@ public class TelaSecaoConteudoMat extends AppCompatActivity {
         btnVoltar = (ImageButton) findViewById(R.id.btnVoltar);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
+        db = FirebaseFirestore.getInstance();
+        userId = FirebaseAuth.getInstance()
+                .getCurrentUser()
+                .getUid();
+
+
+        // lista
         lista = new ArrayList<>();
 
-        lista.add(new Curso("Matemática Básica", 4, 1,
-                "matematica_basica"));
+        lista.add(new Curso(
+                "Matemática Básica",
+                "matematica_basica",
+                false));
 
-        lista.add(new Curso("Porcentagem", 4, 0,
-                "porcentagem"));
+        lista.add(new Curso(
+                "Porcentagem",
+                "porcentagem",
+                false));
 
-        lista.add(new Curso("Álgebra", 4, 1,
-                "algebra"));
+        lista.add(new Curso(
+                "Álgebra",
+                "algebra",
+                false));
 
-        lista.add(new Curso("Funções", 5, 2,
-                "funcoes"));
+        lista.add(new Curso(
+                "Funções",
+                "funcoes",
+                false));
 
-        lista.add(new Curso("Geometria Plana", 4, 0,
-                "geometria_plana"));
+        lista.add(new Curso(
+                "Geometria Plana",
+                "geometria_plana",
+                false));
 
-        lista.add(new Curso("Geometria Espacial", 6, 0,
-                "geometria_espacial"));
+        lista.add(new Curso(
+                "Geometria Espacial",
+                "geometria_espacial",
+                false));
 
-        lista.add(new Curso("Grandezas e Medidas", 4, 3,
-                "grandezas_medidas"));
+        lista.add(new Curso(
+                "Grandezas e Medidas",
+                "grandezas_medidas",
+                false));
 
-        lista.add(new Curso("Estatística", 5, 0,
-                "estatistica"));
+        lista.add(new Curso(
+                "Estatística",
+                "estatistica",
+                false));
 
-        lista.add(new Curso("Probabilidade", 2, 0,
-                "probabilidade"));
+        lista.add(new Curso(
+                "Probabilidade",
+                "probabilidade",
+                false));
 
-        lista.add(new Curso("Matemática Financeira", 3, 1,
-                "matematica_financeira"));
+        lista.add(new Curso(
+                "Matemática Financeira",
+                "matematica_financeira",
+                false));
 
         //adapter
         adapter = new CursoAdapter(lista);
@@ -73,11 +104,43 @@ public class TelaSecaoConteudoMat extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
-        //3) evento do btnVoltar
+        carregarProgresso();
+
+        //evento do btnVoltar
         btnVoltar.setOnClickListener(v -> {
             startActivity(new Intent(this, Home.class));
         });
+    }
 
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
 
+        carregarProgresso();
+    }
+
+    private void carregarProgresso()
+    {
+        for (Curso c : lista)
+        {
+            String progressoId =
+                    userId + "_" + c.getConteudoId();
+
+            db.collection("progresso")
+                    .document(progressoId)
+                    .get()
+                    .addOnSuccessListener(document -> {
+
+                        boolean visto =
+                                document.exists()
+                                        && Boolean.TRUE.equals(
+                                        document.getBoolean("visto"));
+
+                        c.setVisto(visto);
+
+                        adapter.notifyDataSetChanged();
+                    });
+        }
     }
 }
