@@ -13,10 +13,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -31,6 +33,7 @@ public class PerfilUsuario extends AppCompatActivity
 
     // 1) atributos
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
+    ImageView imgPerfil;
     TextView txtNome, txtEmail, txtPontos, txtDias;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -50,6 +53,8 @@ public class PerfilUsuario extends AppCompatActivity
         txtNome = (TextView) findViewById(R.id.txtNome);
         txtPontos = (TextView) findViewById(R.id.txtPontos);
         txtDias = (TextView) findViewById(R.id.txtDias);
+
+        imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
         switchModoEscuro = (Switch) findViewById(R.id.switchModoEscuro);
 
@@ -132,8 +137,24 @@ public class PerfilUsuario extends AppCompatActivity
                     if (document.exists()){
                         txtNome.setText(document.getString("nome"));
                         txtEmail.setText(document.getString("email"));
+
+                        // FOTO
+                        String foto = document.getString("fotoPerfil");
+
+                        if (foto != null && !foto.isEmpty()) {
+
+                            Glide.with(this)
+                                    .load(foto)
+                                    .circleCrop()
+                                    .into(imgPerfil);
+                        }
                     }
                 });
+
+        // Butaoo EditarPerfil
+        findViewById(R.id.btnEditar).setOnClickListener(v -> {
+            startActivity(new Intent(this, EditarPerfil.class));
+        });
 
         // Butao de sair da conta
         lnlSairConta.setOnClickListener(view -> {
@@ -186,7 +207,7 @@ public class PerfilUsuario extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent it = new Intent(PerfilUsuario.this, Buscar.class);
+                Intent it = new Intent(PerfilUsuario.this, Curso.class);
                 startActivity(it);
             }
         });

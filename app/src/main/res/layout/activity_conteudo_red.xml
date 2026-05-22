@@ -1,101 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConteudoMat">
+    tools:context=".ConteudoRed">
 
-    <!-- FOOTER -->
+    <!-- HEADER -->
 
-    <View
-        android:id="@+id/footer"
+    <LinearLayout
+        android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@drawable/bg_bottom_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:background="#7B2FBE"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <ImageButton
-        android:id="@+id/btnHome"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_home"
-        android:contentDescription="Início"
-        app:tint="@color/icone_selecionado"
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:tint="#FFFFFF" />
 
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintStart_toStartOf="@id/footer"
-        app:layout_constraintEnd_toStartOf="@id/btnDesempenho"
-        app:layout_constraintTop_toTopOf="@id/footer"/>
+        <TextView
+            android:layout_width="257dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="Conteúdo de\n Redação"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/btnDesempenho"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_desempenho"
-        android:contentDescription="Desempenho"
-        app:tint="@color/icone_selecionado"
-
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintStart_toEndOf="@id/btnHome"
-        app:layout_constraintEnd_toStartOf="@id/btnBuscar"
-        app:layout_constraintTop_toTopOf="@id/footer"/>
-
-    <ImageButton
-        android:id="@+id/btnBuscar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_buscar"
-        android:contentDescription="Buscar"
-        app:tint="@color/icone_selecionado"
-
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintStart_toEndOf="@id/btnDesempenho"
-        app:layout_constraintEnd_toStartOf="@id/btnPerfil"
-        app:layout_constraintTop_toTopOf="@id/footer"/>
-
-    <ImageButton
-        android:id="@+id/btnPerfil"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_user"
-        android:contentDescription="Perfil"
-        app:tint="@color/icone_selecionado"
-
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintStart_toEndOf="@id/btnBuscar"
-        app:layout_constraintEnd_toEndOf="@id/footer"
-        app:layout_constraintTop_toTopOf="@id/footer"/>
+    <!-- Subtitulo -->
 
     <TextView
-        android:id="@+id/titulo"
-        android:layout_width="298dp"
-        android:layout_height="95dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Conteúdo de Redação"
-        android:textColor="#A170FA"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Escolha um conteúdo"
+        android:textColor="#7B2FBE"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <!-- Recycler -->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
-        app:layout_constraintTop_toBottomOf="@id/titulo"
-        app:layout_constraintBottom_toTopOf="@id/footer"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:clipToPadding="false"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

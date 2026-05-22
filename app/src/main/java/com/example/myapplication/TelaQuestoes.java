@@ -87,7 +87,8 @@ public class TelaQuestoes extends AppCompatActivity {
                         if (questoesRaw != null && !questoesRaw.isEmpty()) {
 
                             List<Questao> todasQuestoes = new ArrayList<>();
-                            for (Map<String, Object> q : questoesRaw) {
+
+                            for (Map<String, Object> q : questoesRaw) {  // ✅ itera direto
                                 todasQuestoes.add(new Questao(
                                         (String) q.get("enunciado"),
                                         (String) q.get("alternativa_a"),
@@ -101,7 +102,7 @@ public class TelaQuestoes extends AppCompatActivity {
 
                             Collections.shuffle(todasQuestoes);
                             int quantidade = Math.min(MAX_QUESTOES, todasQuestoes.size());
-                            listaQuestoes = todasQuestoes.subList(0, quantidade);
+                            listaQuestoes = new ArrayList<>(todasQuestoes.subList(0, quantidade));
 
                             exibirQuestao(indiceAtual);
 
