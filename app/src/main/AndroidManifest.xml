@@ -23,7 +23,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
+            android:name=".TelaRedacao"
+            android:exported="false" />
+        <activity
             android:name=".AlterarSenha"
+            android:exported="false" />
+        <activity
+            android:name=".Notas"
             android:exported="false" />
         <activity
             android:name=".EditarPerfil"

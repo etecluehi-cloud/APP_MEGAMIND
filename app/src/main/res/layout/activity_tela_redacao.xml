@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F0FF"
+    android:background="?android:attr/windowBackground"
     tools:context=".TelaRedacao">
 
     <!-- HEADER roxo -->
@@ -21,8 +21,8 @@
     <!-- Botão Voltar -->
     <ImageButton
         android:id="@+id/btnVoltar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/bg_circulo_roxo"
         android:contentDescription="Voltar"
@@ -51,15 +51,15 @@
     <Button
         android:id="@+id/btnNotas"
         android:layout_width="wrap_content"
-        android:layout_height="36dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/bg_botao_notas"
         android:fontFamily="@font/poppins"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:text="📋 Notas"
         android:textColor="#FFFFFF"
         android:textSize="13sp"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
         app:layout_constraintBottom_toBottomOf="@id/header"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/header" />
@@ -72,7 +72,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="#EDE7FF"
+        android:background="?android:attr/windowBackground"
         app:cardCornerRadius="12dp"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +101,7 @@
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/poppins_bold"
                 android:text="A importância da educação financeira nas escolas brasileiras"
-                android:textColor="#1A1A2E"
+                android:textColor="@color/cor_texto"
                 android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -144,7 +144,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="#FFFFFF"
+        android:background="?android:attr/windowBackground"
         app:cardCornerRadius="12dp"
         app:cardElevation="2dp"
         app:layout_constraintBottom_toTopOf="@id/btnSalvarRedacao"
@@ -162,7 +162,7 @@
             android:hint="Introdução: apresente o tema e sua tese..."
             android:inputType="textMultiLine|textCapSentences"
             android:padding="14dp"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/cor_texto"
             android:textColorHint="#BBBBBB"
             android:textSize="14sp" />
     </androidx.cardview.widget.CardView>

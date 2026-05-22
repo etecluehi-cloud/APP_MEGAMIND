@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F0FF"
-    tools:context=".NotasActivity">
+    android:background="?android:attr/windowBackground"
+    tools:context=".Notas">
 
     <!-- HEADER -->
     <View
@@ -20,8 +20,8 @@
 
     <ImageButton
         android:id="@+id/btnVoltar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/bg_circulo_roxo"
         android:contentDescription="Voltar"
@@ -48,8 +48,8 @@
     <!-- Ícone de bot no canto direito do header -->
     <ImageButton
         android:id="@+id/btnChatBot"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/bg_circulo_roxo"
         android:contentDescription="Corretor IA"

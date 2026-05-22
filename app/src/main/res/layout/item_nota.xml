@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
-    app:cardBackgroundColor="#FFFFFF"
+    android:background="?android:attr/windowBackground"
     app:cardCornerRadius="14dp"
     app:cardElevation="2dp">
 
@@ -34,7 +34,7 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Educação Financeira nas Escolas"
-            android:textColor="#1A1A2E"
+            android:textColor="@color/cor_texto"
             android:textSize="15sp" />
 
         <!-- Preview do texto -->
