@@ -3,20 +3,16 @@ package com.example.myapplication;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.functions.FirebaseFunctions;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 public class ChatBot extends AppCompatActivity {
 
@@ -26,15 +22,15 @@ public class ChatBot extends AppCompatActivity {
     private ChatAdapter chatAdapter;
     private List<Mensagem> listaMensagens = new ArrayList<>();
 
-    // Firebase Functions (que chama a IA)
-    private FirebaseFunctions functions;
+    // Gemini IA
+    private GeminiManager geminiManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_bot);
 
-        functions = FirebaseFunctions.getInstance();
+        geminiManager = new GeminiManager();
 
         recyclerMensagens = findViewById(R.id.recyclerMensagens);
         edtMensagem = findViewById(R.id.edtMensagem);
@@ -44,9 +40,10 @@ public class ChatBot extends AppCompatActivity {
         chatAdapter = new ChatAdapter(listaMensagens);
         recyclerMensagens.setAdapter(chatAdapter);
 
-        // Mensagens iniciais do bot (apresentação)
+        // Mensagens iniciais do bot
         adicionarMensagemBot("🎉 Olá! Sou o Corretor IA. Cole sua redação abaixo e vou analisar com base nos critérios do ENEM! 📝");
-        adicionarMensagemBot("Vou avaliar: **Competência 1** (gramática), **C2** (tema), **C3** (argumentação), **C4** (coesão) e **C5** (proposta de intervenção). 🎯");
+
+        adicionarMensagemBot("Vou avaliar: Competência 1 (gramática), Competência 2 (tema), Competência 3 (argumentação), Competência 4 (coesão) e Competência 5 (proposta de intervenção). 🎯");
 
         btnEnviar.setOnClickListener(v -> enviarMensagem());
 
@@ -56,59 +53,143 @@ public class ChatBot extends AppCompatActivity {
     // ============================================================
     // ENVIO DE MENSAGEM E CHAMADA DA IA
     // ============================================================
+
     private void enviarMensagem() {
+
         String textoUsuario = edtMensagem.getText().toString().trim();
+
         if (textoUsuario.isEmpty()) return;
 
-        // Adiciona mensagem do usuário na tela
+        // Adiciona mensagem do usuário
         adicionarMensagemUsuario(textoUsuario);
+
         edtMensagem.setText("");
 
-        // Mostra indicador "digitando..."
-        adicionarMensagemBot("...");
+        // Mostra digitando...
+        adicionarMensagemBot("✍️ Corrigindo sua redação...");
+
         int posicaoDigitando = listaMensagens.size() - 1;
 
-        // Monta o objeto para enviar à Firebase Function
-        Map<String, Object> dados = new HashMap<>();
-        dados.put("redacao", textoUsuario);
+        // ============================================================
+        // PROMPT DA IA
+        // ============================================================
 
-        // Chama a Firebase Cloud Function chamada "corrigirRedacao"
-        functions
-                .getHttpsCallable("corrigirRedacao")
-                .call(dados)
-                .addOnSuccessListener(result -> {
-                    // Remove o "..."
-                    listaMensagens.remove(posicaoDigitando);
-                    chatAdapter.notifyItemRemoved(posicaoDigitando);
+        String prompt =
+                "Você é um corretor especialista do ENEM. " +
+                        "Analise a redação abaixo e dê um feedback detalhado seguindo EXATAMENTE as 5 competências do ENEM.\n\n" +
 
-                    // Pega a resposta da IA
-                    String resposta = (String) result.getData();
-                    adicionarMensagemBot(resposta != null ? resposta : "Não consegui processar sua redação.");
+                        "REDAÇÃO DO ALUNO:\n" +
+                        textoUsuario +
 
-                    // Rola para o fim
-                    recyclerMensagens.scrollToPosition(listaMensagens.size() - 1);
-                })
-                .addOnFailureListener(e -> {
-                    listaMensagens.remove(posicaoDigitando);
-                    chatAdapter.notifyItemRemoved(posicaoDigitando);
-                    adicionarMensagemBot("❌ Erro ao processar: " + e.getLocalizedMessage());
-                });
+                        "\n\nForneça o feedback no seguinte formato:\n\n" +
+
+                        "📊 NOTA ESTIMADA: X/1000\n\n" +
+
+                        "✅ COMPETÊNCIA 1 - Domínio da norma culta (0-200)\n" +
+                        "Nota: X/200\n" +
+                        "Análise: Avalie gramática, ortografia e pontuação.\n\n" +
+
+                        "🎯 COMPETÊNCIA 2 - Compreensão do tema (0-200)\n" +
+                        "Nota: X/200\n" +
+                        "Análise: Avalie se o aluno entendeu e desenvolveu o tema.\n\n" +
+
+                        "💡 COMPETÊNCIA 3 - Capacidade de argumentação (0-200)\n" +
+                        "Nota: X/200\n" +
+                        "Análise: Avalie a qualidade dos argumentos.\n\n" +
+
+                        "🔗 COMPETÊNCIA 4 - Coesão e coerência (0-200)\n" +
+                        "Nota: X/200\n" +
+                        "Análise: Avalie conectivos e progressão textual.\n\n" +
+
+                        "🌍 COMPETÊNCIA 5 - Proposta de intervenção (0-200)\n" +
+                        "Nota: X/200\n" +
+                        "Análise: Avalie ação, agente, modo, finalidade e detalhamento.\n\n" +
+
+                        "💬 FEEDBACK GERAL:\n" +
+                        "Dê um parecer geral motivador e construtivo com sugestões de melhoria.";
+
+        // ============================================================
+        // CHAMADA DO GEMINI
+        // ============================================================
+
+        geminiManager.corrigirRedacao(prompt)
+                .addListener(() -> {
+
+                    try {
+
+                        String resposta = geminiManager
+                                .corrigirRedacao(prompt)
+                                .get()
+                                .getText();
+                        runOnUiThread(() -> {
+
+                            // Remove mensagem digitando
+                            listaMensagens.remove(posicaoDigitando);
+                            chatAdapter.notifyItemRemoved(posicaoDigitando);
+
+                            adicionarMensagemBot(
+                                    resposta != null
+                                            ? resposta
+                                            : " Não consegui corrigir sua redação."
+                            );
+
+                            recyclerMensagens.scrollToPosition(listaMensagens.size() - 1);
+                        });
+
+                    } catch (Exception e) {
+
+                        runOnUiThread(() -> {
+
+                            listaMensagens.remove(posicaoDigitando);
+                            chatAdapter.notifyItemRemoved(posicaoDigitando);
+
+                            adicionarMensagemBot(
+                                    "❌ Erro ao processar redação:\n" +
+                                            e.getMessage()
+                            );
+                        });
+                    }
+
+                }, Runnable::run);
     }
 
+    // ============================================================
+    // MENSAGEM BOT
+    // ============================================================
+
     private void adicionarMensagemBot(String texto) {
-        String hora = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
-        listaMensagens.add(new Mensagem(texto, hora, false)); // false = mensagem do bot
+
+        String hora = new SimpleDateFormat(
+                "HH:mm",
+                Locale.getDefault()
+        ).format(new Date());
+
+        listaMensagens.add(
+                new Mensagem(texto, hora, false)
+        );
+
         chatAdapter.notifyItemInserted(listaMensagens.size() - 1);
+
         recyclerMensagens.scrollToPosition(listaMensagens.size() - 1);
     }
 
+    // ============================================================
+    // MENSAGEM USUÁRIO
+    // ============================================================
+
     private void adicionarMensagemUsuario(String texto) {
-        String hora = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
-        listaMensagens.add(new Mensagem(texto, hora, true)); // true = mensagem do usuário
+
+        String hora = new SimpleDateFormat(
+                "HH:mm",
+                Locale.getDefault()
+        ).format(new Date());
+
+        listaMensagens.add(
+                new Mensagem(texto, hora, true)
+        );
+
         chatAdapter.notifyItemInserted(listaMensagens.size() - 1);
+
         recyclerMensagens.scrollToPosition(listaMensagens.size() - 1);
     }
 }
-
-
-
