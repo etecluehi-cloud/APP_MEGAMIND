@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -18,9 +19,10 @@
             android:id="@+id/txtTituloResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
             android:text="Resultado"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -46,24 +48,26 @@
             android:id="@+id/txtAcertos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="✅  Acertos: 0 de 5"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#4CAF50"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:layout_marginBottom="12dp"/>
+            android:text="✅  Acertos: 0 de 5"
+            android:textColor="#4CAF50"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <!-- Erros -->
         <TextView
             android:id="@+id/txtErros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="❌  Erros: 0 de 5"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#F44336"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:layout_marginBottom="32dp"/>
+            android:text="❌  Erros: 0 de 5"
+            android:textColor="#F44336"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <!-- Divisor -->
         <View
@@ -77,22 +81,23 @@
             android:id="@+id/txtDesempenho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bom trabalho!"
-            android:textSize="16sp"
-            android:textColor="#555555"
+            android:layout_marginBottom="48dp"
+            android:fontFamily="@font/poppins"
             android:gravity="center"
-            android:layout_marginBottom="48dp"/>
+            android:text="Bom trabalho!"
+            android:textColor="#555555"
+            android:textSize="16sp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnVoltarResultado"
             android:layout_width="match_parent"
             android:layout_height="52dp"
+            android:backgroundTint="#7B2FBE"
+            android:fontFamily="@font/poppins_bold"
             android:text="Voltar ao Menu"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:backgroundTint="#7B2FBE"
-            app:cornerRadius="12dp"
-            xmlns:app="http://schemas.android.com/apk/res-auto"/>
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 

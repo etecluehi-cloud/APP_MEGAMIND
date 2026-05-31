@@ -170,6 +170,7 @@
                 app:strokeWidth="0dp">
 
                 <LinearLayout
+                    android:id="@+id/lnlNotificacoes"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:gravity="center_vertical"
@@ -204,6 +205,7 @@
                 app:strokeWidth="0dp">
 
                 <LinearLayout
+                    android:id="@+id/lnlModoEscuro"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:gravity="center_vertical"
@@ -238,6 +240,7 @@
                 app:strokeWidth="0dp">
 
                 <LinearLayout
+                    android:id="@+id/lnlMetaDiaria"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:clickable="true"
@@ -327,6 +330,7 @@
                 app:strokeWidth="0dp">
 
                 <LinearLayout
+                    android:id="@+id/lnlFaleConosco"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:clickable="true"
