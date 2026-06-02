@@ -1,12 +1,18 @@
 package com.example.myapplication;
 
-public class Meta
-{
-    String texto;
-    boolean concluida;
+public class Meta {
 
-    public Meta(String texto, boolean concluida) {
-        this.texto = texto;
+    private String id;
+    private String texto;
+    private boolean concluida;
+
+    public Meta(String id, String texto, boolean concluida) {
+        this.id        = id;
+        this.texto     = texto;
         this.concluida = concluida;
     }
+
+    public String getId()        { return id; }
+    public String getTexto()     { return texto; }
+    public boolean isConcluida() { return concluida; }
 }
