@@ -24,32 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtPontos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/poppins"
-            android:text="⭐ 0 pts"
-
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@id/txtNomeU"
-            app:layout_constraintTop_toBottomOf="@id/txtNomeU" />
-
-        <TextView
-            android:id="@+id/txtStreak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins"
-            android:text="🔥 0 dias"
-
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@id/txtPontos"
-            app:layout_constraintTop_toBottomOf="@id/txtPontos" />
-
         <ImageView
             android:id="@+id/imgLogo2"
             android:layout_width="134dp"
@@ -298,6 +272,7 @@
             android:background="@drawable/bg_bottom_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton

@@ -8,6 +8,9 @@ plugins {
 val localProperties = Properties()
 localProperties.load(rootProject.file("local.properties").inputStream())
 
+// ✅ Fora do android { } — aqui funciona corretamente
+val groqKey = localProperties.getProperty("GROQ_API_KEY") ?: ""
+
 android {
     namespace = "com.example.myapplication"
     compileSdk = 34
@@ -23,7 +26,7 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "GEMINI_API_KEY", "\"${localProperties.getProperty("GEMINI_API_KEY")}\"")
+        buildConfigField("String", "GROQ_API_KEY", "\"$groqKey\"")
     }
 
     buildTypes {

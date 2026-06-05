@@ -23,14 +23,14 @@ public class ChatBot extends AppCompatActivity {
     private ChatAdapter chatAdapter;
     private List<Mensagem> listaMensagens = new ArrayList<>();
 
-    private GeminiManager geminiManager;
+    private GroqManager groqManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_bot);
 
-        geminiManager = new GeminiManager();
+        groqManager = new GroqManager();
 
         recyclerMensagens = findViewById(R.id.recyclerMensagens);
         edtMensagem = findViewById(R.id.edtMensagem);
@@ -78,7 +78,7 @@ public class ChatBot extends AppCompatActivity {
 
         new Thread(() -> {
             try {
-                Future<String> future = geminiManager.corrigirRedacao(prompt);
+                Future<String> future = groqManager.corrigirRedacao(prompt);
                 String resposta = future.get();
 
                 runOnUiThread(() -> {

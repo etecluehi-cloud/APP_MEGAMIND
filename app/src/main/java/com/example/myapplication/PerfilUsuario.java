@@ -34,7 +34,7 @@ public class PerfilUsuario extends AppCompatActivity
     // 1) atributos
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
     ImageView imgPerfil;
-    TextView txtNome, txtEmail, txtPontos, txtDias;
+    TextView txtNome, txtEmail;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     LinearLayout lnlSairConta, lnlSobreNos, lnlNotificacoes,
@@ -56,8 +56,6 @@ public class PerfilUsuario extends AppCompatActivity
 
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         txtNome = (TextView) findViewById(R.id.txtNome);
-        txtPontos = (TextView) findViewById(R.id.txtPontos);
-        txtDias = (TextView) findViewById(R.id.txtDias);
 
         imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
@@ -143,10 +141,6 @@ public class PerfilUsuario extends AppCompatActivity
             switchNotificacoes.postDelayed(() -> recreate(), 400);
         });
 
-        // Contagem da Gameficação
-        Gamificacao g = new Gamificacao(this);
-        txtPontos.setText("⭐ " + g.getPontos() + " pts");
-        txtDias.setText("🔥 " + g.getStreak() + " dias");
 
         db.collection("usuarios")
                 .document(userId)
