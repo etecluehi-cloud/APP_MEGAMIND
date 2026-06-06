@@ -11,8 +11,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
         <!-- HEADER -->
         <LinearLayout
             android:id="@+id/header"
