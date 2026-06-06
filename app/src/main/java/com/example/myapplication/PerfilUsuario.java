@@ -34,11 +34,10 @@ public class PerfilUsuario extends AppCompatActivity
     // 1) atributos
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
     ImageView imgPerfil;
-    TextView txtNome, txtEmail;
+    TextView txtNome, txtEmail, txtPontos, txtDias;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    LinearLayout lnlSairConta, lnlSobreNos, lnlNotificacoes,
-    lnlModoEscuro, lnlMetaDiaria, lnlFaleConosco;
+    LinearLayout lnlSairConta, lnlSobreNos, lnlMetaDiaria;
     Switch switchModoEscuro;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,13 +48,12 @@ public class PerfilUsuario extends AppCompatActivity
         // 2) linkando elementos
         lnlSairConta = (LinearLayout) findViewById(R.id.lnlSairConta);
         lnlSobreNos = (LinearLayout) findViewById(R.id.lnlSobreNos);
-        lnlNotificacoes = (LinearLayout) findViewById(R.id.lnlNotificacoes);
-        lnlModoEscuro = (LinearLayout) findViewById(R.id.lnlModoEscuro);
         lnlMetaDiaria = (LinearLayout) findViewById(R.id.lnlMetaDiaria);
-        lnlFaleConosco = (LinearLayout) findViewById(R.id.lnlFaleConosco);
 
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         txtNome = (TextView) findViewById(R.id.txtNome);
+        txtPontos = (TextView) findViewById(R.id.txtPontos);
+        txtDias = (TextView) findViewById(R.id.txtDias);
 
         imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
@@ -73,18 +71,14 @@ public class PerfilUsuario extends AppCompatActivity
 
         switchModoEscuro.setChecked(modoEscuroSalvo);
 
-        if (modoEscuroSalvo)
-        {
+        if (modoEscuroSalvo) {
             switchModoEscuro.getTrackDrawable().setTint(Color.parseColor("#4CAF50"));
-        }
-        else
-        {
+        } else {
             switchModoEscuro.getTrackDrawable().setTint(Color.parseColor("#E53935"));
         }
 
         // Quando o usuário mexe no switch
-        switchModoEscuro.setOnCheckedChangeListener((buttonView, isChecked) ->
-        {
+        switchModoEscuro.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Salva a preferência
             getSharedPreferences("config", MODE_PRIVATE)
                     .edit()
@@ -92,12 +86,9 @@ public class PerfilUsuario extends AppCompatActivity
                     .apply();
 
             // Aplica o tema
-            if (isChecked)
-            {
+            if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            }
-            else
-            {
+            } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
 
@@ -111,27 +102,21 @@ public class PerfilUsuario extends AppCompatActivity
                 .getBoolean("notificacoes", false);
         switchNotificacoes.setChecked(notificacoesAtivas);
 
-        if (notificacoesAtivas)
-        {
+        if (notificacoesAtivas) {
             switchNotificacoes.getTrackDrawable().setTint(Color.parseColor("#4CAF50"));
-        }
-        else
-        {
+        } else {
             switchNotificacoes.getTrackDrawable().setTint(Color.parseColor("#E53935"));
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
-                    != PackageManager.PERMISSION_GRANTED)
-            {
+                    != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this,
                         new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1);
             }
         }
 
-        switchNotificacoes.setOnCheckedChangeListener((buttonView, isChecked) ->
-        {
+        switchNotificacoes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             getSharedPreferences("config", MODE_PRIVATE)
                     .edit()
                     .putBoolean("notificacoes", isChecked)
@@ -141,12 +126,15 @@ public class PerfilUsuario extends AppCompatActivity
             switchNotificacoes.postDelayed(() -> recreate(), 400);
         });
 
+        // Contagem da Gameficação
+        Gamificacao g = new Gamificacao(this);
+        txtPontos.setText("⭐ " + g.getPontos() + " pts");
+        txtDias.setText("🔥 " + g.getStreak() + " dias");
 
         db.collection("usuarios")
                 .document(userId)
                 .get()
-                .addOnSuccessListener(document ->
-                {
+                .addOnSuccessListener(document -> {
                     if (document.exists()){
                         txtNome.setText(document.getString("nome"));
                         txtEmail.setText(document.getString("email"));
@@ -154,8 +142,7 @@ public class PerfilUsuario extends AppCompatActivity
                         // FOTO
                         String foto = document.getString("fotoPerfil");
 
-                        if (foto != null && !foto.isEmpty())
-                        {
+                        if (foto != null && !foto.isEmpty()) {
 
                             Glide.with(this)
                                     .load(foto)
@@ -165,42 +152,17 @@ public class PerfilUsuario extends AppCompatActivity
                     }
                 });
 
-        // botao meta diaria
-        lnlMetaDiaria.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent it = new Intent(PerfilUsuario.this, MetaDiaria.class);
-                startActivity(it);
-            }
-        });
-
-        //botao fale conosco
-        lnlFaleConosco.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                Intent it = new Intent(PerfilUsuario.this, FaleConosco.class);
-                startActivity(it);
-            }
-        });
-
-        // Botaoo EditarPerfil
-        findViewById(R.id.btnEditar).setOnClickListener(v ->
-        {
+        // Butaoo EditarPerfil
+        findViewById(R.id.btnEditar).setOnClickListener(v -> {
             startActivity(new Intent(this, EditarPerfil.class));
         });
 
-        // Botao de sair da conta
-        lnlSairConta.setOnClickListener(view ->
-        {
+        // Butao de sair da conta
+        lnlSairConta.setOnClickListener(view -> {
             new AlertDialog.Builder(this)
                     .setTitle("Sair da conta")
                     .setMessage("Tem certeza que deseja sair?")
-                    .setPositiveButton("Sim", (dialog, which) ->
-                    {
+                    .setPositiveButton("Sim", (dialog, which) -> {
                         FirebaseAuth.getInstance().signOut();
                         Intent it = new Intent(PerfilUsuario.this, MainActivity.class);
                         it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -211,13 +173,19 @@ public class PerfilUsuario extends AppCompatActivity
                     .show();
         });
 
-        // Botao sobre nós
-        lnlSobreNos.setOnClickListener(new View.OnClickListener()
-        {
+        // Butao sobre nós
+        lnlSobreNos.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 Intent it = new Intent(PerfilUsuario.this, SobreNos.class);
+                startActivity(it);
+            }
+        });
+
+        lnlMetaDiaria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(PerfilUsuario.this, MetaDiaria.class);
                 startActivity(it);
             }
         });
