@@ -125,6 +125,8 @@ public class TelaSecaoConteudoMat extends AppCompatActivity {
         carregarProgresso();
     }
 
+    // Atualizado
+
     @Override
     protected void onResume() {
         super.onResume();
