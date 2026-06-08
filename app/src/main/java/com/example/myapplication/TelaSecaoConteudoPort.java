@@ -189,9 +189,6 @@ public class TelaSecaoConteudoPort extends AppCompatActivity {
                             DetalhesVideos.class
                     );
 
-
-
-
             intent.putExtra(
                     "conteudoId",
                     conteudoId

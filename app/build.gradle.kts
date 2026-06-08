@@ -73,5 +73,7 @@ dependencies {
     // Permite selecionar uma foto da galeria
     implementation("com.github.yalantis:ucrop:2.2.8")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 

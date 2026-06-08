@@ -1,101 +1,44 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 public class TelaSecaoQuestoesMat extends AppCompatActivity {
 
-    // Os botões são CardViews — igual ao seu XML
-    CardView cardGeometriaPlana, cardGeometriaEspacial, cardGrandezas,
-            cardEstatistica, cardProbabilidade, cardFuncoes;
-
     ImageButton btnVoltar;
+    LinearLayout lnlGeometriaPlana, lnlGeometriaEspacial, lnlGrandezas,
+            lnlEstatistica, lnlProbabilidade, lnlFuncoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_secao_questoes_mat);
 
-        // Linkando os cards — os IDs são exatamente os do seu XML
-        cardGeometriaPlana   = findViewById(R.id.cardGeometriaPlana);
-        cardGeometriaEspacial= findViewById(R.id.cardGeometriaEspacial);
-        cardGrandezas        = findViewById(R.id.cardGrandezas);
-        cardEstatistica      = findViewById(R.id.cardEstatistica);
-        cardProbabilidade    = findViewById(R.id.cardProbabilidade);
-        cardFuncoes          = findViewById(R.id.cardFuncoes);
-        btnVoltar            = findViewById(R.id.btnVoltar);
+        btnVoltar           = findViewById(R.id.btnVoltar);
+        lnlGeometriaPlana   = findViewById(R.id.lnlGeometriaPlana);
+        lnlGeometriaEspacial= findViewById(R.id.lnlGeometriaEspacial);
+        lnlGrandezas        = findViewById(R.id.lnlGrandezas);
+        lnlEstatistica      = findViewById(R.id.lnlEstatistica);
+        lnlProbabilidade    = findViewById(R.id.lnlProbabilidade);
+        lnlFuncoes          = findViewById(R.id.lnlFuncoes);
 
-        // Botão voltar
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(v -> finish());
 
-        // Geometria Plana → passa "geometria_plana" para TelaQuestoes
-        cardGeometriaPlana.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "geometria_plana");
-                startActivity(it);
-            }
-        });
+        lnlGeometriaPlana.setOnClickListener(v -> abrirQuestoes("geometria_plana"));
+        lnlGeometriaEspacial.setOnClickListener(v -> abrirQuestoes("geometria_espacial"));
+        lnlGrandezas.setOnClickListener(v -> abrirQuestoes("grandezas_medidas"));
+        lnlEstatistica.setOnClickListener(v -> abrirQuestoes("estatistica"));
+        lnlProbabilidade.setOnClickListener(v -> abrirQuestoes("probabilidade"));
+        lnlFuncoes.setOnClickListener(v -> abrirQuestoes("funcoes"));
+    }
 
-        // Geometria Espacial → passa "geometria_espacial"
-        cardGeometriaEspacial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "geometria_espacial");
-                startActivity(it);
-            }
-        });
-
-        // Grandezas e Medidas → passa "grandezas"
-        cardGrandezas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "grandezas");
-                startActivity(it);
-            }
-        });
-
-        // Estatística → passa "estatistica"
-        cardEstatistica.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "estatistica");
-                startActivity(it);
-            }
-        });
-
-        // Probabilidade → passa "probabilidade"
-        cardProbabilidade.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "probabilidade");
-                startActivity(it);
-            }
-        });
-
-        // Funções → passa "funcoes"
-        cardFuncoes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "funcoes");
-                startActivity(it);
-            }
-        });
+    private void abrirQuestoes(String conteudoId) {
+        Intent intent = new Intent(this, TelaQuestoes.class);
+        intent.putExtra("conteudoId", conteudoId);
+        startActivity(intent);
     }
 }
