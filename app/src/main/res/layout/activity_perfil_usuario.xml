@@ -328,6 +328,7 @@
                 app:strokeWidth="0dp">
 
                 <LinearLayout
+                    android:id="@+id/lnlFaleConosco"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
                     android:clickable="true"
