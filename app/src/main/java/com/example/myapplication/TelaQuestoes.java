@@ -57,7 +57,7 @@ public class TelaQuestoes extends AppCompatActivity {
         btnProxima        = findViewById(R.id.btnProxima);
         btnVoltar         = findViewById(R.id.btnVoltar);
 
-        String conteudoId = getIntent().getStringExtra("conteudo_id");
+        String conteudoId = getIntent().getStringExtra("conteudoId");
 
         if (conteudoId == null || conteudoId.isEmpty()) {
             Toast.makeText(this, "Erro: conteúdo não identificado.", Toast.LENGTH_SHORT).show();

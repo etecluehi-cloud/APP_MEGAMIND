@@ -185,7 +185,7 @@ public class PerfilUsuario extends AppCompatActivity
         lnlMetaDiaria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(PerfilUsuario.this, SobreNos.class);
+                Intent it = new Intent(PerfilUsuario.this, MetaDiaria.class);
                 startActivity(it);
             }
         });
