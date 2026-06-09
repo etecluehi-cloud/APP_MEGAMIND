@@ -1,193 +1,94 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:orientation="vertical">
 
-    <!-- TOPO ROXO -->
-
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#7B2CE2"
+        android:layout_height="wrap_content"
+        android:background="#7B2FBE"
+        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="16dp">
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_back"
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:src="@drawable/baseline_arrow_back_24"
             app:tint="#FFFFFF" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:gravity="center"
             android:text="Fale conosco"
             android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="40dp"/>
+
     </LinearLayout>
 
-    <!-- CONTEÚDO -->
+    <!-- Histórico -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"/>
+
+    <!-- Campo para enviar nova dúvida -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="16dp">
 
         <TextView
-            android:text="PERGUNTAS FREQUENTES"
-            android:textStyle="bold"
-            android:textColor="#B5B5B5"
-            android:textSize="12sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_marginTop="18dp"
-            android:text="O app é gratuito?"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#222222"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="Sim, 100% gratuito para todos."
-            android:textColor="#888888"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_marginTop="18dp"
-            android:text="Posso usar sem internet?"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#222222"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="Não, precisa de conexão."
-            android:textColor="#888888"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_marginTop="18dp"
-            android:text="Como redefinir minha senha?"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:textColor="#222222"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="Acesse a tela de login e toque em 'Esqueci minha senha'."
-            android:textColor="#888888"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_marginTop="30dp"
-            android:text="AINDA TEM DÚVIDAS?"
-            android:textStyle="bold"
-            android:textColor="#B5B5B5"
-            android:textSize="12sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <!-- EMAIL -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:text="NOVA DÚVIDA"
+            android:textColor="#7B2FBE"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:layout_marginBottom="8dp"/>
 
-            <View
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="#E9EEF9"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:text="Enviar e-mail"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="#222222"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="contato@megamind.com"
-                    android:textColor="#888888"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- WHATSAPP -->
-
-        <LinearLayout
+        <EditText
+            android:id="@+id/edtDuvida"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_campo_senha"
+            android:gravity="top|start"
+            android:hint="Digite sua dúvida..."
+            android:inputType="textMultiLine"
+            android:minLines="5"
+            android:maxLines="8"
+            android:padding="12dp"/>
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
             android:layout_marginTop="16dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="#EAF7EA"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="14dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:text="WhatsApp"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:textColor="#222222"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="Resposta em até 24h"
-                    android:textColor="#888888"
-                    android:textSize="14sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-
-            <TextView
-                android:text="›"
-                android:textSize="24sp"
-                android:textColor="#C0C0C0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
+            android:text="Enviar dúvida"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:backgroundTint="#7B2FBE"
+            app:cornerRadius="12dp"/>
 
     </LinearLayout>
-
 </LinearLayout>
