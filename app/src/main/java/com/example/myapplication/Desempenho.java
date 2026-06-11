@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -63,6 +64,37 @@ public class Desempenho extends AppCompatActivity {
         configurarAbas();
         configurarFooter();
         carregarDados();
+
+        //evento dos botoes do footer
+        btnHome.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Desempenho.this, Home.class);
+                startActivity(it);
+            }
+        });
+
+        btnPerfil.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Desempenho.this, PerfilUsuario.class);
+                startActivity(it);
+            }
+        });
+
+        btnBuscar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Desempenho.this, Gamificacao.class);
+                startActivity(it);
+            }
+        });
     }
 
     // ─────────────────────────────────────────

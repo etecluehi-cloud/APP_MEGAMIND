@@ -47,7 +47,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "leitura_interpretacao");
+                it.putExtra("conteudoId", "leitura_interpretacao");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -58,7 +58,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "figuras_linguagem");
+                it.putExtra("conteudoId", "figuras_linguagem");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -69,7 +69,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "funcoes_linguagem");
+                it.putExtra("conteudoId", "funcoes_linguagem");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -80,7 +80,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "variacao_linguistica");
+                it.putExtra("conteudoId", "variacao_linguistica");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -91,7 +91,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "generos_textuais");
+                it.putExtra("conteudoId", "generos_textuais");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -102,7 +102,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "linguagem_verbal_nao_verbal");
+                it.putExtra("conteudoId", "linguagem_verbal_nao_verbal");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -113,7 +113,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "intertextualidade");
+                it.putExtra("conteudoId", "intertextualidade");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -124,7 +124,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "denotacao_conotacao");
+                it.putExtra("conteudoId", "denotacao_conotacao");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -135,7 +135,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "literatura");
+                it.putExtra("conteudoId", "literatura");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }
@@ -146,7 +146,7 @@ public class TelaSecaoQuestoesPort extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesPort.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "gramatica");
+                it.putExtra("conteudoId", "gramatica");
                 it.putExtra("colecao", "questoes_portugues");
                 startActivity(it);
             }

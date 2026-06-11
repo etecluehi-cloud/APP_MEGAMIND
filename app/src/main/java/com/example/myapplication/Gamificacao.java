@@ -35,6 +35,7 @@ public class Gamificacao extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore db;
 
+
     private static final String[] TOPICOS_MAT = {
             "geometria_plana", "geometria_espacial", "funcoes", "estatistica",
             "probabilidade", "analise_combinatoria", "razao_proporcao",
@@ -93,6 +94,37 @@ public class Gamificacao extends AppCompatActivity {
 
         carregarDadosUsuario();
         carregarRanking();
+
+        //evento dos botoes do footer
+        btnDesempenho.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Gamificacao.this, Desempenho.class);
+                startActivity(it);
+            }
+        });
+
+        btnPerfil.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Gamificacao.this, PerfilUsuario.class);
+                startActivity(it);
+            }
+        });
+
+        btnHome.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Gamificacao.this, Home.class);
+                startActivity(it);
+            }
+        });
     }
 
     private void carregarDadosUsuario() {

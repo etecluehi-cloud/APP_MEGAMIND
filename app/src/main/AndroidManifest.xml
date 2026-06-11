@@ -21,6 +21,12 @@
             android:name=".FaleConosco"
             android:exported="false" />
         <activity
+            android:name=".TelaSecaoQuestoesPort"
+            android:exported="false" />
+        <activity
+            android:name=".Gamificacao"
+            android:exported="false" />
+        <activity
             android:name=".MetaDiaria"
             android:exported="false" />
         <activity

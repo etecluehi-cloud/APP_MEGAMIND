@@ -128,16 +128,6 @@ public class Home extends AppCompatActivity
             }
         });
 
-        btnBuscar.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent it = new Intent(Home.this, Curso.class);
-                startActivity(it);
-            }
-        });
-
         btnPerfil.setOnClickListener(new View.OnClickListener()
         {
             @Override

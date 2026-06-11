@@ -51,7 +51,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "geometria_plana");
+                it.putExtra("conteudoId", "geometria_plana");
                 startActivity(it);
             }
         });
@@ -61,7 +61,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "geometria_espacial");
+                it.putExtra("conteudoId", "geometria_espacial");
                 startActivity(it);
             }
         });
@@ -71,7 +71,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "funcoes");
+                it.putExtra("conteudoId", "funcoes");
                 startActivity(it);
             }
         });
@@ -81,7 +81,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "estatistica");
+                it.putExtra("conteudoId", "estatistica");
                 startActivity(it);
             }
         });
@@ -91,7 +91,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "probabilidade");
+                it.putExtra("conteudoId", "probabilidade");
                 startActivity(it);
             }
         });
@@ -101,7 +101,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "analise_combinatoria");
+                it.putExtra("conteudoId", "analise_combinatoria");
                 startActivity(it);
             }
         });
@@ -111,7 +111,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "razao_proporcao");
+                it.putExtra("conteudoId", "razao_proporcao");
                 startActivity(it);
             }
         });
@@ -121,7 +121,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "regra_de_tres");
+                it.putExtra("conteudoId", "regra_de_tres");
                 startActivity(it);
             }
         });
@@ -131,7 +131,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "porcentagem");
+                it.putExtra("conteudoId", "porcentagem");
                 startActivity(it);
             }
         });
@@ -141,7 +141,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "matematica_financeira");
+                it.putExtra("conteudoId", "matematica_financeira");
                 startActivity(it);
             }
         });
@@ -151,7 +151,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "trigonometria");
+                it.putExtra("conteudoId", "trigonometria");
                 startActivity(it);
             }
         });
@@ -161,7 +161,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "matrizes");
+                it.putExtra("conteudoId", "matrizes");
                 startActivity(it);
             }
         });
@@ -171,7 +171,7 @@ public class TelaSecaoQuestoesMat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(TelaSecaoQuestoesMat.this, TelaQuestoes.class);
-                it.putExtra("conteudo_id", "sistemas_lineares");
+                it.putExtra("conteudoId", "sistemas_lineares");
                 startActivity(it);
             }
         });
