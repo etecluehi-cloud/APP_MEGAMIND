@@ -24,7 +24,7 @@ public class Home extends AppCompatActivity
     // 1) atributos
     ImageView btnConteudoMat, btnConteudoPort, btnRedacao, btnQuestMat, btnQuestPort, imgPerfil;
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
-    TextView txtPontos, txtStreak, txtNomeU;
+    TextView txtNomeU;
     DrawerLayout drawer;  // controla o abrir/fechar do menu
     ImageButton btnMenu;
     NavigationView navView; // mostra oq tem no menu
@@ -36,12 +36,6 @@ public class Home extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // inicializa o sistema de gamificacao
-        Gamificacao g = new Gamificacao(this);
-        //verifica se o usuario entrou hj e atualiza o streak + pontos
-        g.verificarLoginDiario();
-        // começa a contar o tempo
-        g.registrarEntrada();
 
         // 2) linkando os elementos
         btnConteudoMat = (ImageView) findViewById(R.id.btnConteudoMat);
@@ -58,9 +52,6 @@ public class Home extends AppCompatActivity
         btnPerfil = (ImageButton) findViewById(R.id.btnPerfil);
         btnMenu = (ImageButton) findViewById(R.id.btnMenu);
 
-
-        txtPontos = (TextView) findViewById(R.id.txtPontos);
-        txtStreak = (TextView) findViewById(R.id.txtStreak);
         txtNomeU = (TextView) findViewById(R.id.txtNomeU);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,11 +65,6 @@ public class Home extends AppCompatActivity
                 .edit()
                 .putString("ultimo_login", hoje)
                 .apply();
-
-        // mostrar a gamificacao
-        txtPontos.setText("⭐ " + g.getPontos() + " pts");
-        txtStreak.setText("🔥 " + g.getStreak() + " dias");
-
 
         // eventos do botoes de conteudo
         btnConteudoMat.setOnClickListener(new View.OnClickListener()
@@ -122,6 +108,14 @@ public class Home extends AppCompatActivity
             }
         });
 
+        btnQuestPort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent it = new Intent(Home.this, TelaSecaoQuestoesPort.class);
+                startActivity(it);
+            }
+        });
 
         //evento dos botoes do footer
         btnDesempenho.setOnClickListener(new View.OnClickListener()
@@ -134,22 +128,22 @@ public class Home extends AppCompatActivity
             }
         });
 
-        btnBuscar.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent it = new Intent(Home.this, Curso.class);
-                startActivity(it);
-            }
-        });
-
         btnPerfil.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 Intent it = new Intent(Home.this, PerfilUsuario.class);
+                startActivity(it);
+            }
+        });
+
+        btnBuscar.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent it = new Intent(Home.this, Gamificacao.class);
                 startActivity(it);
             }
         });

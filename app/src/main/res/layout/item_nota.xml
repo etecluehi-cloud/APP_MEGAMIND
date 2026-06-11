@@ -60,7 +60,7 @@
             <Button
                 android:id="@+id/btnVer"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="40dp"
                 android:background="@drawable/bg_botao_ver"
                 android:fontFamily="@font/poppins"
                 android:text="👁 Ver"
@@ -72,7 +72,7 @@
             <Button
                 android:id="@+id/btnCopiar"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/bg_botao_copiar"
                 android:fontFamily="@font/poppins"
@@ -85,7 +85,7 @@
             <Button
                 android:id="@+id/btnExcluir"
                 android:layout_width="wrap_content"
-                android:layout_height="32dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/bg_botao_excluir"
                 android:fontFamily="@font/poppins"

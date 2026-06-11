@@ -1,4 +1,3 @@
-// TelaQuestoes.java
 package com.example.myapplication;
 
 import android.content.Intent;
@@ -13,12 +12,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class TelaQuestoes extends AppCompatActivity {
@@ -29,12 +33,17 @@ public class TelaQuestoes extends AppCompatActivity {
 
     FirebaseFirestore db;
     List<Questao> listaQuestoes = new ArrayList<>();
-    int indiceAtual = 0;
+    int indiceAtual  = 0;
     boolean jaRespondeu = false;
 
-    // ── NOVO: contadores de acerto e erro ──
     int totalAcertos = 0;
     int totalErros   = 0;
+
+    // ── Gamificação ──────────────────────────────────────────────────────────
+    private boolean modoBloco           = false;
+    private int     questoesRespondidas = 0;
+    private String  colecao             = "questoes_matematica";
+    // ────────────────────────────────────────────────────────────────────────
 
     private static final int MAX_QUESTOES = 5;
 
@@ -59,6 +68,11 @@ public class TelaQuestoes extends AppCompatActivity {
 
         String conteudoId = getIntent().getStringExtra("conteudoId");
 
+        // ── Detecta modo bloco ───────────────────────────────────────────────
+        modoBloco = getIntent().getBooleanExtra("bloco_gamificacao", false);
+        String colecaoExtra = getIntent().getStringExtra("colecao");
+        if (colecaoExtra != null && !colecaoExtra.isEmpty()) colecao = colecaoExtra;
+
         if (conteudoId == null || conteudoId.isEmpty()) {
             Toast.makeText(this, "Erro: conteúdo não identificado.", Toast.LENGTH_SHORT).show();
             finish();
@@ -66,18 +80,15 @@ public class TelaQuestoes extends AppCompatActivity {
         }
 
         btnVoltar.setOnClickListener(view -> finish());
-
         buscarQuestoesNoFirestore(conteudoId);
     }
 
     private void buscarQuestoesNoFirestore(String conteudoId) {
-        db.collection("questoes_matematica")
+        db.collection(colecao)
                 .document(conteudoId)
                 .get()
                 .addOnSuccessListener(documento -> {
-
                     if (documento.exists()) {
-
                         String titulo = documento.getString("titulo");
                         txtTituloConteudo.setText(titulo != null ? titulo : conteudoId);
 
@@ -85,11 +96,9 @@ public class TelaQuestoes extends AppCompatActivity {
                                 (List<Map<String, Object>>) documento.get("questoes");
 
                         if (questoesRaw != null && !questoesRaw.isEmpty()) {
-
-                            List<Questao> todasQuestoes = new ArrayList<>();
-
-                            for (Map<String, Object> q : questoesRaw) {  // ✅ itera direto
-                                todasQuestoes.add(new Questao(
+                            List<Questao> todas = new ArrayList<>();
+                            for (Map<String, Object> q : questoesRaw) {
+                                todas.add(new Questao(
                                         (String) q.get("enunciado"),
                                         (String) q.get("alternativa_a"),
                                         (String) q.get("alternativa_b"),
@@ -99,34 +108,25 @@ public class TelaQuestoes extends AppCompatActivity {
                                         (String) q.get("resposta_correta")
                                 ));
                             }
-
-                            Collections.shuffle(todasQuestoes);
-                            int quantidade = Math.min(MAX_QUESTOES, todasQuestoes.size());
-                            listaQuestoes = new ArrayList<>(todasQuestoes.subList(0, quantidade));
-
+                            Collections.shuffle(todas);
+                            int qtd = Math.min(MAX_QUESTOES, todas.size());
+                            listaQuestoes = new ArrayList<>(todas.subList(0, qtd));
                             exibirQuestao(indiceAtual);
-
                         } else {
                             Toast.makeText(this, "Nenhuma questão encontrada!", Toast.LENGTH_SHORT).show();
                         }
-
                     } else {
                         Toast.makeText(this, "Conteúdo não encontrado no banco.", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(e ->
-                        Toast.makeText(this, "Erro ao buscar: " + e.getMessage(), Toast.LENGTH_LONG).show()
-                );
+                        Toast.makeText(this, "Erro ao buscar: " + e.getMessage(), Toast.LENGTH_LONG).show());
     }
 
     private static class AlternativaItem {
         String texto;
         boolean correta;
-
-        AlternativaItem(String texto, boolean correta) {
-            this.texto  = texto;
-            this.correta = correta;
-        }
+        AlternativaItem(String texto, boolean correta) { this.texto = texto; this.correta = correta; }
     }
 
     private void exibirQuestao(int indice) {
@@ -136,53 +136,119 @@ public class TelaQuestoes extends AppCompatActivity {
         txtContador.setText("Questão " + (indice + 1) + " de " + listaQuestoes.size());
         txtEnunciado.setText(q.getEnunciado());
 
-        List<AlternativaItem> alternativas = new ArrayList<>(Arrays.asList(
+        List<AlternativaItem> alts = new ArrayList<>(Arrays.asList(
                 new AlternativaItem(q.getAlternativa_a(), "A".equals(q.getResposta_correta())),
                 new AlternativaItem(q.getAlternativa_b(), "B".equals(q.getResposta_correta())),
                 new AlternativaItem(q.getAlternativa_c(), "C".equals(q.getResposta_correta())),
                 new AlternativaItem(q.getAlternativa_d(), "D".equals(q.getResposta_correta())),
                 new AlternativaItem(q.getAlternativa_e(), "E".equals(q.getResposta_correta()))
         ));
-
-        Collections.shuffle(alternativas);
+        Collections.shuffle(alts);
 
         List<Button> botoes = Arrays.asList(btnA, btnB, btnC, btnD, btnE);
         String[] letras = {"A", "B", "C", "D", "E"};
-
         String novaLetraCorreta = "A";
-        for (int i = 0; i < alternativas.size(); i++) {
-            botoes.get(i).setText(letras[i] + ") " + alternativas.get(i).texto);
-            if (alternativas.get(i).correta) {
-                novaLetraCorreta = letras[i];
-            }
+        for (int i = 0; i < alts.size(); i++) {
+            botoes.get(i).setText(letras[i] + ") " + alts.get(i).texto);
+            if (alts.get(i).correta) novaLetraCorreta = letras[i];
         }
 
         resetarBotoes();
         txtFeedback.setVisibility(View.GONE);
         btnProxima.setVisibility(View.GONE);
 
-        final String letraCorretaFinal = novaLetraCorreta;
-        configurarClique(btnA, "A", letraCorretaFinal);
-        configurarClique(btnB, "B", letraCorretaFinal);
-        configurarClique(btnC, "C", letraCorretaFinal);
-        configurarClique(btnD, "D", letraCorretaFinal);
-        configurarClique(btnE, "E", letraCorretaFinal);
+        final String letraCorreta = novaLetraCorreta;
+        configurarClique(btnA, "A", letraCorreta);
+        configurarClique(btnB, "B", letraCorreta);
+        configurarClique(btnC, "C", letraCorreta);
+        configurarClique(btnD, "D", letraCorreta);
+        configurarClique(btnE, "E", letraCorreta);
 
         btnProxima.setOnClickListener(view -> {
+            if (modoBloco) {
+                questoesRespondidas++;
+                if (questoesRespondidas >= listaQuestoes.size()) {
+                    // Bloco finalizado → salva XP + streak e volta
+                    salvarBlocoGamificacao();
+                    return;
+                }
+            }
             if (indiceAtual < listaQuestoes.size() - 1) {
                 indiceAtual++;
                 exibirQuestao(indiceAtual);
             } else {
-                // ── NOVO: abre TelaResultado passando os dados ──
+                // Fluxo normal (não bloco)
                 Intent intent = new Intent(TelaQuestoes.this, TelaResultado.class);
-                intent.putExtra("total_acertos", totalAcertos);
-                intent.putExtra("total_erros",   totalErros);
+                intent.putExtra("total_acertos",  totalAcertos);
+                intent.putExtra("total_erros",    totalErros);
                 intent.putExtra("total_questoes", listaQuestoes.size());
-                intent.putExtra("titulo", txtTituloConteudo.getText().toString());
+                intent.putExtra("titulo",         txtTituloConteudo.getText().toString());
                 startActivity(intent);
                 finish();
             }
         });
+    }
+
+    // ── Salva XP e streak ao terminar o bloco ────────────────────────────────
+    // Regras:
+    //   • Só ganha XP e streak se acertou >= 3 questões
+    //   • Streak só incrementa 1 vez por dia (campo "ultimoBlocoData")
+    //   • Se o dia anterior não foi jogado, o streak é zerado
+    private void salvarBlocoGamificacao() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) { finish(); return; }
+
+        String hoje = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+        boolean acertouMinimo = totalAcertos >= 3;
+
+        db.collection("usuarios").document(user.getUid())
+                .get()
+                .addOnSuccessListener(doc -> {
+                    long pontosAtuais = doc.getLong("pontos") != null ? doc.getLong("pontos") : 0L;
+                    long streakAtual  = doc.getLong("streak")  != null ? doc.getLong("streak")  : 0L;
+                    String ultimoBloco = doc.getString("ultimoBlocoData");
+                    if (ultimoBloco == null) ultimoBloco = "";
+
+                    // Calcular ontem para verificar sequência
+                    java.util.Calendar cal = java.util.Calendar.getInstance();
+                    cal.add(java.util.Calendar.DAY_OF_YEAR, -1);
+                    String ontem = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(cal.getTime());
+
+                    long novosPontos = pontosAtuais;
+                    long novoStreak  = streakAtual;
+
+                    if (acertouMinimo) {
+                        // +50 XP sempre que acerta o mínimo
+                        novosPontos = pontosAtuais + 50;
+
+                        if (hoje.equals(ultimoBloco)) {
+                            // Já jogou hoje: não altera o streak
+                        } else if (ontem.equals(ultimoBloco) || ultimoBloco.isEmpty()) {
+                            // Jogou ontem (ou é o primeiro): incrementa streak
+                            novoStreak = streakAtual + 1;
+                        } else {
+                            // Pulou um dia: reinicia streak
+                            novoStreak = 1;
+                        }
+                    }
+
+                    // Monta o update
+                    java.util.Map<String, Object> update = new java.util.HashMap<>();
+                    update.put("pontos", novosPontos);
+                    update.put("streak", novoStreak);
+                    if (acertouMinimo) update.put("ultimoBlocoData", hoje);
+
+                    db.collection("usuarios").document(user.getUid())
+                            .update(update)
+                            .addOnCompleteListener(task -> {
+                                Intent it = new Intent(TelaQuestoes.this, Gamificacao.class);
+                                it.putExtra("bloco_concluido", true);
+                                it.putExtra("acertos_bloco", totalAcertos);
+                                it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(it);
+                                finish();
+                            });
+                });
     }
 
     private void configurarClique(Button botao, String letra, String respostaCorreta) {
@@ -191,21 +257,16 @@ public class TelaQuestoes extends AppCompatActivity {
             jaRespondeu = true;
 
             if (letra.equals(respostaCorreta)) {
-                botao.setBackgroundTintList(
-                        ColorStateList.valueOf(Color.parseColor("#4CAF50")));
+                botao.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
                 txtFeedback.setTextColor(Color.parseColor("#4CAF50"));
-                totalAcertos++; // ── NOVO ──
+                totalAcertos++;
             } else {
-                botao.setBackgroundTintList(
-                        ColorStateList.valueOf(Color.parseColor("#F44336")));
+                botao.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F44336")));
                 txtFeedback.setTextColor(Color.parseColor("#F44336"));
-                totalErros++; // ── NOVO ──
-
+                totalErros++;
                 Button botaoCorreto = getBotaoPorLetra(respostaCorreta);
-                if (botaoCorreto != null) {
-                    botaoCorreto.setBackgroundTintList(
-                            ColorStateList.valueOf(Color.parseColor("#4CAF50")));
-                }
+                if (botaoCorreto != null)
+                    botaoCorreto.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
             }
 
             txtFeedback.setVisibility(View.VISIBLE);
@@ -215,21 +276,15 @@ public class TelaQuestoes extends AppCompatActivity {
 
     private Button getBotaoPorLetra(String letra) {
         switch (letra) {
-            case "A": return btnA;
-            case "B": return btnB;
-            case "C": return btnC;
-            case "D": return btnD;
-            case "E": return btnE;
-            default:  return null;
+            case "A": return btnA; case "B": return btnB; case "C": return btnC;
+            case "D": return btnD; case "E": return btnE; default: return null;
         }
     }
 
     private void resetarBotoes() {
         ColorStateList roxo = ColorStateList.valueOf(Color.parseColor("#7B2FBE"));
-        btnA.setBackgroundTintList(roxo);
-        btnB.setBackgroundTintList(roxo);
-        btnC.setBackgroundTintList(roxo);
-        btnD.setBackgroundTintList(roxo);
+        btnA.setBackgroundTintList(roxo); btnB.setBackgroundTintList(roxo);
+        btnC.setBackgroundTintList(roxo); btnD.setBackgroundTintList(roxo);
         btnE.setBackgroundTintList(roxo);
     }
 }

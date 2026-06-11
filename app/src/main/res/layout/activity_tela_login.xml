@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TelaLogin">
 
+    <!-- BOTÃO VOLTAR -->
+    <ImageButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_btncirculo"
+        android:contentDescription="Botão voltar"
+        android:padding="12dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@android:color/white" />
 
+    <!-- FUNDO ROXO -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/purpleBackground"
         android:layout_width="0dp"
@@ -15,40 +31,44 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.8" >
+        app:layout_constraintHeight_percent="0.80">
 
+        <!-- TÍTULO -->
         <TextView
             android:id="@+id/lblLogin"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
             android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="16dp"
             android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
             android:text="Faça seu login"
             android:textColor="#FFFFFF"
             android:textSize="34sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- EMAIL -->
         <TextView
             android:id="@+id/lblEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="124dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/poppins"
             android:text="E-MAIL"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/lblLogin" />
 
         <EditText
             android:id="@+id/txtEmail"
             android:layout_width="0dp"
             android:layout_height="55dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_input"
             android:hint="*"
@@ -56,30 +76,30 @@
             android:padding="16dp"
             android:textColor="@android:color/white"
             android:textColorHint="#E0E0E0"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lblEmail" />
 
+        <!-- SENHA -->
         <TextView
             android:id="@+id/lblSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins"
             android:text="SENHA"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/txtEmail" />
 
         <EditText
             android:id="@+id/txtSenha"
             android:layout_width="0dp"
             android:layout_height="55dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_input"
             android:hint="*"
@@ -87,28 +107,29 @@
             android:padding="16dp"
             android:textColor="@android:color/white"
             android:textColorHint="#E0E0E0"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lblSenha" />
 
+        <!-- BOTÃO ENTRAR -->
         <Button
             android:id="@+id/btnEntrar"
-            android:layout_width="195dp"
+            android:layout_width="0dp"
             android:layout_height="52dp"
-            android:layout_marginStart="108dp"
+            android:layout_marginHorizontal="70dp"
             android:layout_marginTop="28dp"
             android:fontFamily="@font/poppins_bold"
             android:text="Entrar"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtSenha" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtSenha" />
 
+        <!-- ESQUECEU SENHA -->
         <TextView
             android:id="@+id/lblEsqueceuSenha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="116dp"
             android:layout_marginTop="8dp"
             android:clickable="true"
             android:focusable="true"
@@ -118,24 +139,10 @@
             android:text="Esqueceu sua senha?"
             android:textAlignment="center"
             android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/btnEntrar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnEntrar" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageButton
-        android:id="@+id/btnVoltar"
-        android:layout_width="104dp"
-        android:layout_height="105dp"
-        android:layout_margin="16dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="51dp"
-        android:background="@drawable/bg_btncirculo"
-        android:contentDescription="Botão voltar"
-        android:padding="12dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@android:color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

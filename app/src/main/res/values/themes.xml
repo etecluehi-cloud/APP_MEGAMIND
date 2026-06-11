@@ -9,5 +9,9 @@
 
     <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
 
+    <style name="NavMenuTextStyle">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textSize">15sp</item>
+    </style>
 
 </resources>

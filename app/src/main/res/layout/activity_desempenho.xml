@@ -111,7 +111,7 @@
                         <View
                             android:layout_width="10dp"
                             android:layout_height="10dp"
-                            android:background="#E0D0FF"
+                            android:background="?android:attr/windowBackground"
                             android:layout_marginEnd="4dp" />
 
                         <TextView

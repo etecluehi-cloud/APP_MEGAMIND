@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- ===== HEADER ===== -->
+        <!-- header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,17 +35,18 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
                 android:text="Sobre nós"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginEnd="40dp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <!-- ===== LOGO + NOME DO APP ===== -->
+        <!-- logo + nome do app -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,27 +56,27 @@
             android:paddingBottom="24dp">
 
             <LinearLayout
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="#33FFFFFF"
-                android:gravity="center"
-                android:layout_marginBottom="10dp">
+                android:layout_width="81dp"
+                android:layout_height="81dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
 
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/logo"
+                    android:background="@android:color/transparent"
                     android:clipToOutline="true"
-                    android:background="@drawable/bg_circulo_roxo" />
+                    android:scaleType="centerInside"
+                    android:src="@drawable/logo" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
                 android:text="MegaMind"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -84,14 +85,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/poppins"
                 android:text="Feito para quem quer passar no ENEM"
                 android:textColor="#CCFFFFFF"
-                android:textSize="12sp"
-                android:layout_marginTop="4dp" />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
-        <!-- ===== CARD: NOSSA MISSÃO ===== -->
+        <!-- card nossa missão -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -108,11 +110,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="Nossa missão"
                     android:textColor="#7B2FBE"
                     android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp" />
+                    android:textStyle="bold" />
 
                 <View
                     android:layout_width="36dp"
@@ -123,26 +126,28 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:lineSpacingMultiplier="1.5"
                     android:text="Democratizar o acesso ao estudo de qualidade para o ENEM de forma gratuita, oferecendo conteúdos completos de Matemática e Português para todos os estudantes."
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="13sp"
-                    android:lineSpacingMultiplier="1.5" />
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <!-- ===== O QUE OFERECEMOS ===== -->
+        <!-- o que oferecemos -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="O que oferecemos"
-            android:textColor="#7B2FBE"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/poppins_medium"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:paddingBottom="8dp" />
+            android:paddingBottom="8dp"
+            android:text="O que oferecemos?"
+            android:textColor="#7B2FBE"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <GridLayout
             android:layout_width="match_parent"
@@ -168,7 +173,17 @@
                     android:gravity="center"
                     android:padding="12dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📖" android:textSize="22sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Conteúdos gratuitos" android:textColor="#7B2FBE" android:textSize="11sp" android:textStyle="bold" android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="Conteúdos gratuitos"
+                        android:textColor="#7B2FBE"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -187,7 +202,17 @@
                     android:gravity="center"
                     android:padding="12dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎯" android:textSize="22sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Foco no ENEM" android:textColor="#7B2FBE" android:textSize="11sp" android:textStyle="bold" android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="Foco no ENEM"
+                        android:textColor="#7B2FBE"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -206,7 +231,17 @@
                     android:gravity="center"
                     android:padding="12dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📊" android:textSize="22sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Acompanhe o progresso" android:textColor="#7B2FBE" android:textSize="11sp" android:textStyle="bold" android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="Acompanhe o progresso"
+                        android:textColor="#7B2FBE"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -225,16 +260,27 @@
                     android:gravity="center"
                     android:padding="12dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏆" android:textSize="22sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Gamificação" android:textColor="#7B2FBE" android:textSize="11sp" android:textStyle="bold" android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:gravity="center"
+                        android:text="Gamificação"
+                        android:textColor="#7B2FBE"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
 
-        <!-- ===== NOSSA EQUIPE ===== -->
+        <!-- nossa equipe-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
             android:text="Nossa equipe"
             android:textColor="#7B2FBE"
             android:textSize="14sp"
@@ -281,10 +327,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="Hillary Gregório"
                         android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textSize="13sp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -333,10 +379,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="Lucas Teixeira"
                         android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textSize="13sp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -385,10 +431,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="Luana Coutinho"
                         android:textColor="?android:attr/textColorPrimary"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:textSize="13sp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

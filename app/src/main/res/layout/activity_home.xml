@@ -18,43 +18,16 @@
         <View
             android:id="@+id/header"
             android:layout_width="0dp"
-            android:layout_height="160dp"
+            android:layout_height="140dp"
             android:background="@drawable/bg_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/txtPontos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/poppins"
-            android:text="⭐ 0 pts"
-
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@id/txtNomeU"
-            app:layout_constraintTop_toBottomOf="@id/txtNomeU" />
-
-        <TextView
-            android:id="@+id/txtStreak"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:fontFamily="@font/poppins"
-            android:text="🔥 0 dias"
-
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@id/txtPontos"
-            app:layout_constraintTop_toBottomOf="@id/txtPontos" />
-
         <ImageView
             android:id="@+id/imgLogo2"
-            android:layout_width="134dp"
-            android:layout_height="164dp"
-            android:layout_marginTop="0dp"
+            android:layout_width="130dp"
+            android:layout_height="150dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -245,11 +218,13 @@
             app:layout_constraintTop_toBottomOf="@id/txtConteudoMat"
             app:tint="@android:color/white" />
 
+        <!-- TEXTOS LINHA 2 -->
+
         <ImageView
             android:id="@+id/btnQuestPort"
             android:layout_width="72dp"
             android:layout_height="72dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="52dp"
             android:background="@drawable/bg_botao_conteudo"
             android:clickable="true"
             android:contentDescription="Questões de Português"
@@ -263,8 +238,6 @@
             app:layout_constraintStart_toEndOf="@id/btnQuestMat"
             app:layout_constraintTop_toBottomOf="@+id/txtRedacao"
             app:tint="@android:color/white" />
-
-        <!-- TEXTOS LINHA 2 -->
 
         <TextView
             android:id="@+id/txtQuestMat"
@@ -290,7 +263,6 @@
             app:layout_constraintStart_toStartOf="@id/btnQuestPort"
             app:layout_constraintTop_toBottomOf="@id/btnQuestPort" />
 
-        <!-- FOOTER -->
 
         <View
             android:id="@+id/footer"
@@ -299,6 +271,7 @@
             android:background="@drawable/bg_bottom_menu"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
@@ -364,6 +337,12 @@
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/menu_lateral" />
+        android:background="@drawable/bg_nav_drawer"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu_lateral"
+        app:itemTextColor="#FFFFFF"
+        app:itemIconTint="#DDD6FE"
+        app:itemBackground="@drawable/bg_nav_item"
+        app:itemTextAppearance="@style/NavMenuTextStyle" />
 
-</androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/bg_menu_header">
+
+    <!-- Cérebro grande canto superior direito -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧠"
+        android:textSize="90sp"
+        android:alpha="0.08"
+        android:rotation="-20"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-15dp"
+        android:layout_marginEnd="-15dp" />
+
+    <!-- Cérebro médio canto inferior esquerdo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧠"
+        android:textSize="55sp"
+        android:alpha="0.10"
+        android:rotation="15"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="-10dp" />
+
+    <!-- Cérebro pequeno no topo esquerdo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🧠"
+        android:textSize="36sp"
+        android:alpha="0.08"
+        android:rotation="-10"
+        android:layout_gravity="top|start"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp" />
+
+    <!-- Conteúdo central -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🧠"
+            android:textSize="46sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:fontFamily="@font/poppins_bold"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estude. Evolua. Vença."
+            android:fontFamily="@font/poppins"
+            android:textColor="#DDD6FE"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="2dp"
+            android:background="#A78BFA"
+            android:alpha="0.6"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

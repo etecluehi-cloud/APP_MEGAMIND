@@ -53,8 +53,6 @@ public class PerfilUsuario extends AppCompatActivity
 
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         txtNome = (TextView) findViewById(R.id.txtNome);
-        txtPontos = (TextView) findViewById(R.id.txtPontos);
-        txtDias = (TextView) findViewById(R.id.txtDias);
 
         imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
@@ -126,11 +124,6 @@ public class PerfilUsuario extends AppCompatActivity
             // Aguarda 400ms antes de recriar
             switchNotificacoes.postDelayed(() -> recreate(), 400);
         });
-
-        // Contagem da Gameficação
-        Gamificacao g = new Gamificacao(this);
-        txtPontos.setText("⭐ " + g.getPontos() + " pts");
-        txtDias.setText("🔥 " + g.getStreak() + " dias");
 
         db.collection("usuarios")
                 .document(userId)
@@ -225,7 +218,7 @@ public class PerfilUsuario extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent it = new Intent(PerfilUsuario.this, Curso.class);
+                Intent it = new Intent(PerfilUsuario.this, Gamificacao.class);
                 startActivity(it);
             }
         });

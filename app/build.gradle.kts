@@ -15,6 +15,12 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "GROQ_API_KEY", "\"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\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {

@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header roxo -->
+        <!-- Header -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -42,7 +42,6 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_marginEnd="40dp" />
-
         </LinearLayout>
 
         <!-- Subtítulo -->
@@ -52,377 +51,258 @@
             android:text="ESCOLHA UM TEMA"
             android:textColor="#999999"
             android:textSize="11sp"
-            android:letterSpacing="0.08"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:paddingTop="20dp"
             android:paddingBottom="8dp" />
 
-        <!-- Item 1: Geometria Plana -->
-        <LinearLayout
-            android:id="@+id/lnlGeometriaPlana"
+        <!-- Cards -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGeometriaPlana"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:attr/windowBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="#EDE0FF"
-                android:gravity="center"
-                android:layout_marginEnd="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📐"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Geometria Plana"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 questões"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📐  Geometria Plana"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_seta"
-                app:tint="#CCCCCC"
-                android:contentDescription="Ir" />
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="0.5dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginStart="66dp" />
-
-        <!-- Item 2: Geometria Espacial -->
-        <LinearLayout
-            android:id="@+id/lnlGeometriaEspacial"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGeometriaEspacial"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:attr/windowBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="#EDE0FF"
-                android:gravity="center"
-                android:layout_marginEnd="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🧊"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Geometria Espacial"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 questões"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="🧊  Geometria Espacial"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_seta"
-                app:tint="#CCCCCC"
-                android:contentDescription="Ir" />
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="0.5dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginStart="66dp" />
-
-        <!-- Item 3: Grandezas e Medidas -->
-        <LinearLayout
-            android:id="@+id/lnlGrandezas"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFuncoes"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:attr/windowBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="#EDE0FF"
-                android:gravity="center"
-                android:layout_marginEnd="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📏"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Grandezas e Medidas"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 questões"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📈  Funções"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_seta"
-                app:tint="#CCCCCC"
-                android:contentDescription="Ir" />
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="0.5dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginStart="66dp" />
-
-        <!-- Item 4: Estatística -->
-        <LinearLayout
-            android:id="@+id/lnlEstatistica"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEstatistica"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:attr/windowBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="#EDE0FF"
-                android:gravity="center"
-                android:layout_marginEnd="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📊"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Estatística"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 questões"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📊  Estatística"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_seta"
-                app:tint="#CCCCCC"
-                android:contentDescription="Ir" />
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="0.5dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginStart="66dp" />
-
-        <!-- Item 5: Probabilidade -->
-        <LinearLayout
-            android:id="@+id/lnlProbabilidade"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProbabilidade"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:attr/windowBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="#EDE0FF"
-                android:gravity="center"
-                android:layout_marginEnd="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🎲"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Probabilidade"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 questões"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="🎲  Probabilidade"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_seta"
-                app:tint="#CCCCCC"
-                android:contentDescription="Ir" />
-
-        </LinearLayout>
-
-        <View android:layout_width="match_parent" android:layout_height="0.5dp"
-            android:background="?android:attr/listDivider"
-            android:layout_marginStart="66dp" />
-
-        <!-- Item 6: Funções -->
-        <LinearLayout
-            android:id="@+id/lnlFuncoes"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAnalise"
             android:layout_width="match_parent"
             android:layout_height="64dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:background="?android:attr/windowBackground"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:background="#EDE0FF"
-                android:gravity="center"
-                android:layout_marginEnd="14dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📈"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Funções"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5 questões"
-                    android:textColor="#999999"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
-            </LinearLayout>
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="🔢  Análise Combinatória"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/ic_seta"
-                app:tint="#CCCCCC"
-                android:contentDescription="Ir" />
-
-        </LinearLayout>
-
-        <View
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRazao"
             android:layout_width="match_parent"
-            android:layout_height="32dp" />
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="⚖️  Razão e Proporção"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRegraDeTres"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📐  Regra de Três"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPorcentagem"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="💯  Porcentagem"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMatFinanceira"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="💰  Matemática Financeira"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTrigonometria"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📐  Trigonometria"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMatrizes"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="🔢  Matrizes"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSistemasLineares"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="➗  Sistemas Lineares"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 </ScrollView>

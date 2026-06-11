@@ -35,13 +35,14 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
                 android:text="Editar perfil"
                 android:textColor="#FFFFFF"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginEnd="40dp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -118,6 +119,7 @@
                     android:id="@+id/txtNomeFoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="Hillary Gregório"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
@@ -126,10 +128,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins"
                     android:text="Toque para alterar foto"
                     android:textColor="#7B2FBE"
-                    android:textSize="12sp"
-                    android:layout_marginTop="2dp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -152,14 +155,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INFORMAÇÕES"
-            android:textColor="#999999"
-            android:textSize="11sp"
+            android:fontFamily="@font/poppins"
             android:letterSpacing="0.08"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:paddingTop="20dp"
-            android:paddingBottom="8dp" />
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="INFORMAÇÕES"
+            android:textColor="#999999"
+            android:textSize="11sp" />
 
         <!-- Campo: Nome -->
         <LinearLayout
@@ -200,6 +204,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="Nome"
                     android:textColor="#7B2FBE"
                     android:textSize="11sp"
@@ -209,10 +214,11 @@
                     android:id="@+id/txtNomeAtual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins"
                     android:text="Hillary Gregório"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:layout_marginTop="2dp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -262,6 +268,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="E-mail"
                     android:textColor="#7B2FBE"
                     android:textSize="11sp"
@@ -271,16 +278,18 @@
                     android:id="@+id/txtEmailAtual"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins"
                     android:text="hillary@email.com"
                     android:textColor="#AAAAAA"
-                    android:textSize="14sp"
-                    android:layout_marginTop="2dp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
                 android:text="Fixo"
                 android:textColor="#BBBBBB"
                 android:textSize="11sp" />
@@ -291,14 +300,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SEGURANÇA"
-            android:textColor="#999999"
-            android:textSize="11sp"
+            android:fontFamily="@font/poppins"
             android:letterSpacing="0.08"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:paddingTop="20dp"
-            android:paddingBottom="8dp" />
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="SEGURANÇA"
+            android:textColor="#999999"
+            android:textSize="11sp" />
 
         <!-- Campo: Senha -->
         <LinearLayout
@@ -339,6 +349,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="Senha"
                     android:textColor="#7B2FBE"
                     android:textSize="11sp"
@@ -347,10 +358,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/poppins"
                     android:text="••••••••"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="14sp"
-                    android:layout_marginTop="2dp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -367,14 +379,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="OUTROS"
-            android:textColor="#999999"
-            android:textSize="11sp"
+            android:fontFamily="@font/poppins"
             android:letterSpacing="0.08"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:paddingTop="20dp"
-            android:paddingBottom="8dp" />
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:text="OUTROS"
+            android:textColor="#999999"
+            android:textSize="11sp" />
 
         <!-- Excluir conta -->
         <LinearLayout
@@ -409,6 +422,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins"
                 android:text="Excluir conta"
                 android:textColor="#E53935"
                 android:textSize="14sp" />
