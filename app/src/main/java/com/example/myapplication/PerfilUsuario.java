@@ -37,7 +37,7 @@ public class PerfilUsuario extends AppCompatActivity
     TextView txtNome, txtEmail, txtPontos, txtDias;
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    LinearLayout lnlSairConta, lnlSobreNos, lnlMetaDiaria;
+    LinearLayout lnlSairConta, lnlSobreNos, lnlMetaDiaria, lnlFaleConosco;
     Switch switchModoEscuro;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -49,6 +49,7 @@ public class PerfilUsuario extends AppCompatActivity
         lnlSairConta = (LinearLayout) findViewById(R.id.lnlSairConta);
         lnlSobreNos = (LinearLayout) findViewById(R.id.lnlSobreNos);
         lnlMetaDiaria = (LinearLayout) findViewById(R.id.lnlMetaDiaria);
+        lnlFaleConosco = (LinearLayout) findViewById(R.id.lnlFaleConosco);
 
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         txtNome = (TextView) findViewById(R.id.txtNome);
@@ -186,6 +187,14 @@ public class PerfilUsuario extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent it = new Intent(PerfilUsuario.this, MetaDiaria.class);
+                startActivity(it);
+            }
+        });
+
+        lnlFaleConosco.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(PerfilUsuario.this, FaleConosco.class);
                 startActivity(it);
             }
         });

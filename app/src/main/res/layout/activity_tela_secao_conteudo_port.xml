@@ -39,7 +39,6 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="50dp"
                 android:gravity="center"
-                android:fontFamily="@font/poppins_bold"
                 android:text="Conteúdo de Português"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
@@ -51,7 +50,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
             android:text="Escolha um conteúdo"
             android:textColor="#7B2FBE"
             android:textSize="18sp"
@@ -100,7 +98,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Leitura e\nInterpretação"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -125,8 +122,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -159,7 +155,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Gêneros\nTextuais"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -184,8 +179,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -218,7 +212,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Variação\nLinguística"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -243,8 +236,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -277,7 +269,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Gramática"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -302,8 +293,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -336,7 +326,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Coesão e\nCoerência"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -361,8 +350,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -395,7 +383,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Figuras de\nLinguagem"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -420,8 +407,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -454,7 +440,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins"
                         android:text="Literatura"
                         android:textColor="#FFFFFF"
                         android:textSize="13sp"
@@ -479,8 +464,7 @@
                         android:layout_marginTop="3dp"
                         android:text="0 de 3 vídeos"
                         android:textColor="#AAFFFFFF"
-                        android:textSize="9sp"
-                        android:fontFamily="@font/poppins"/>
+                        android:textSize="9sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

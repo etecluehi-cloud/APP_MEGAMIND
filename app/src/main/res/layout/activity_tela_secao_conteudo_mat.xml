@@ -36,9 +36,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="50dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/poppins_bold"
+                android:layout_marginEnd="50dp"
                 android:gravity="center"
                 android:text="Conteúdo de Matemática"
                 android:textColor="#FFFFFF"
@@ -51,15 +50,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_medium"
-            android:paddingStart="16dp"
-            android:paddingTop="24dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="8dp"
             android:text="Escolha um conteúdo"
             android:textColor="#7B2FBE"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp" />
 
         <!-- GRID DOS CARDS -->
         <GridLayout
@@ -101,12 +99,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/poppins"
                             android:text="Matemática\nBásica"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_weight="1" />
 
                         <!-- Barra de progresso -->
                         <ProgressBar
@@ -127,8 +124,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -162,12 +158,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/poppins"
                             android:text="Porcentagem"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_weight="1" />
 
                         <ProgressBar
                             android:id="@+id/progPorcentagem"
@@ -187,8 +182,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -222,12 +216,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/poppins"
                             android:text="Álgebra"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_weight="1" />
 
                         <ProgressBar
                             android:id="@+id/progAlgebra"
@@ -247,8 +240,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -282,7 +274,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Funções"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -307,8 +298,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -342,7 +332,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Geometria\nPlana"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -367,8 +356,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -402,7 +390,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Geometria\nEspacial"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -427,8 +414,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -462,7 +448,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Grandezas\ne Medidas"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -487,8 +472,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -522,7 +506,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Estatística"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -547,8 +530,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -582,7 +564,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Probabilidade"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -607,8 +588,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -642,7 +622,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:fontFamily="@font/poppins"
                             android:text="Matemática\nFinanceira"
                             android:textColor="#FFFFFF"
                             android:textSize="13sp"
@@ -667,8 +646,7 @@
                             android:layout_marginTop="3dp"
                             android:text="0 de 3 vídeos"
                             android:textColor="#AAFFFFFF"
-                            android:textSize="9sp"
-                            android:fontFamily="@font/poppins"/>
+                            android:textSize="9sp" />
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

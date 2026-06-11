@@ -66,7 +66,7 @@ public class TelaQuestoes extends AppCompatActivity {
         btnProxima        = findViewById(R.id.btnProxima);
         btnVoltar         = findViewById(R.id.btnVoltar);
 
-        String conteudoId = getIntent().getStringExtra("conteudo_id");
+        String conteudoId = getIntent().getStringExtra("conteudoId");
 
         // ── Detecta modo bloco ───────────────────────────────────────────────
         modoBloco = getIntent().getBooleanExtra("bloco_gamificacao", false);
