@@ -281,7 +281,7 @@
                     android:layout_marginTop="2dp"
                     android:fontFamily="@font/poppins"
                     android:text="hillary@email.com"
-                    android:textColor="#AAAAAA"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
             </LinearLayout>
