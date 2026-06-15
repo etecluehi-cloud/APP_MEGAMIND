@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header roxo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#7B2FBE"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="16dp">
+
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="50dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Voltar"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="50dp"
+                android:gravity="center"
+                android:text="Conteúdo de Redação"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Subtítulo -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ESCOLHA UM TEMA"
+            android:textColor="#999999"
+            android:textSize="11sp"
+            android:paddingStart="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="8dp"/>
+
+        <!-- Estrutura do Texto -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEstruturaTexto"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📝 Estrutura do Texto"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tipologia Textual -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTipologiaTextual"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📄 Tipologia Textual"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Competências do ENEM -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCompetencias"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="🎯 Competências do ENEM"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Argumentação -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardArgumentacao"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="💬 Argumentação"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Proposta de Intervenção -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPropostaIntervencao"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="📌 Proposta de Intervenção"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Temas Sociais -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTemasSociais"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="🌎 Temas Sociais Frequentes"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Erros que Zeram -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardErrosZeram"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:text="❌ Erros que Zeram a Nota"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>
