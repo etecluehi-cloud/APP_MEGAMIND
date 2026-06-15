@@ -65,15 +65,7 @@ public class CursoAdapter extends RecyclerView.Adapter<CursoAdapter.ViewHolder> 
         holder.titulo.setText(c.getNome());
 
 
-        // clique no card
-        holder.itemView.setOnClickListener(v -> {
 
-            Intent it = new Intent(v.getContext(), detalhes_conteudos.class);
-
-            it.putExtra("conteudoId", c.getConteudoId());
-
-            v.getContext().startActivity(it);
-        });
 
         if(c.isVisto())
         {

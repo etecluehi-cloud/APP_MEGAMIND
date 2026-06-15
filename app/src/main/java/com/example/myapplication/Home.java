@@ -22,7 +22,7 @@ public class Home extends AppCompatActivity
     //mudança
 
     // 1) atributos
-    ImageView btnConteudoMat, btnConteudoPort, btnRedacao, btnQuestMat, btnQuestPort, imgPerfil;
+    ImageView btnConteudoMat, btnConteudoPort, btnRedacao, btnQuestMat, btnQuestPort, btnConteudoRed, imgPerfil;
     ImageButton btnHome, btnDesempenho, btnBuscar, btnPerfil;
     TextView txtNomeU;
     DrawerLayout drawer;  // controla o abrir/fechar do menu
@@ -43,6 +43,7 @@ public class Home extends AppCompatActivity
         btnRedacao = (ImageView) findViewById(R.id.btnRedacao);
         btnQuestMat = (ImageView) findViewById(R.id.btnQuestMat);
         btnQuestPort = (ImageView) findViewById(R.id.btnQuestPort);
+        btnConteudoRed = (ImageView) findViewById(R.id.btnConteudoRed);
 
         imgPerfil = (ImageView) findViewById(R.id.imgPerfil);
 
@@ -113,6 +114,14 @@ public class Home extends AppCompatActivity
             public void onClick(View v)
             {
                 Intent it = new Intent(Home.this, TelaSecaoQuestoesPort.class);
+                startActivity(it);
+            }
+        });
+
+        btnConteudoRed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(Home.this, TelaSecaoConteudoRed.class);
                 startActivity(it);
             }
         });

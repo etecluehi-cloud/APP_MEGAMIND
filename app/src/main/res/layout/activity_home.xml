@@ -100,7 +100,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header" />
 
-        <!-- LINHA 1 -->
+        <!-- PRIMEIRA LINHA -->
 
         <ImageView
             android:id="@+id/btnConteudoMat"
@@ -109,18 +109,15 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_botao_conteudo"
             android:clickable="true"
-            android:contentDescription="Conteúdo de Matemática"
             android:focusable="true"
-
             android:foreground="?attr/selectableItemBackground"
             android:padding="16dp"
             android:src="@drawable/ic_calculadora"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnConteudoPort"
             app:layout_constraintHorizontal_chainStyle="spread"
-
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textView4"
-            app:tint="@android:color/white" />
+            app:tint="@android:color/white"/>
 
         <ImageView
             android:id="@+id/btnConteudoPort"
@@ -128,141 +125,130 @@
             android:layout_height="72dp"
             android:background="@drawable/bg_botao_conteudo"
             android:clickable="true"
-            android:contentDescription="Conteúdo de Português"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-
             android:padding="16dp"
             android:src="@drawable/ic_livro"
-            app:layout_constraintEnd_toStartOf="@id/btnRedacao"
-
             app:layout_constraintStart_toEndOf="@id/btnConteudoMat"
+            app:layout_constraintEnd_toStartOf="@id/btnConteudoRed"
             app:layout_constraintTop_toTopOf="@id/btnConteudoMat"
-            app:tint="@android:color/white" />
+            app:tint="@android:color/white"/>
+
+        <ImageView
+            android:id="@+id/btnConteudoRed"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_botao_conteudo"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="16dp"
+            android:src="@drawable/ic_redacao"
+            app:layout_constraintStart_toEndOf="@id/btnConteudoPort"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnConteudoMat"
+            app:tint="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/txtConteudoMat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conteúdo&#10;Matemática"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/btnConteudoMat"
+            app:layout_constraintStart_toStartOf="@id/btnConteudoMat"
+            app:layout_constraintEnd_toEndOf="@id/btnConteudoMat"/>
+
+        <TextView
+            android:id="@+id/txtConteudoPort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conteúdo&#10;Português"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/btnConteudoPort"
+            app:layout_constraintStart_toStartOf="@id/btnConteudoPort"
+            app:layout_constraintEnd_toEndOf="@id/btnConteudoPort"/>
+
+        <TextView
+            android:id="@+id/txtConteudoRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Conteúdo&#10;Redação"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/btnConteudoRed"
+            app:layout_constraintStart_toStartOf="@id/btnConteudoRed"
+            app:layout_constraintEnd_toEndOf="@id/btnConteudoRed"/>
+
+
+        <!-- SEGUNDA LINHA -->
+
+        <ImageView
+            android:id="@+id/btnQuestMat"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_botao_conteudo"
+            android:padding="16dp"
+            android:src="@drawable/ic_questoesmat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnQuestPort"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintTop_toBottomOf="@id/txtConteudoMat"
+            app:tint="@android:color/white"/>
+
+        <ImageView
+            android:id="@+id/btnQuestPort"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/bg_botao_conteudo"
+            android:padding="16dp"
+            android:src="@drawable/ic_questoesport"
+            app:layout_constraintStart_toEndOf="@id/btnQuestMat"
+            app:layout_constraintEnd_toStartOf="@id/btnRedacao"
+            app:layout_constraintTop_toTopOf="@id/btnQuestMat"
+            app:tint="@android:color/white"/>
 
         <ImageView
             android:id="@+id/btnRedacao"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:background="@drawable/bg_botao_conteudo"
-            android:clickable="true"
-            android:contentDescription="Conteúdo de Redação"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackground"
-
             android:padding="16dp"
             android:src="@drawable/ic_redacao"
+            app:layout_constraintStart_toEndOf="@id/btnQuestPort"
             app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintStart_toEndOf="@id/btnConteudoPort"
-            app:layout_constraintTop_toTopOf="@id/btnConteudoMat"
-            app:tint="@android:color/white" />
-
-        <!-- TEXTOS LINHA 1 -->
-
-        <TextView
-            android:id="@+id/txtConteudoMat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Conteúdo\nMatemática"
-
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/btnConteudoMat"
-            app:layout_constraintStart_toStartOf="@id/btnConteudoMat"
-            app:layout_constraintTop_toBottomOf="@id/btnConteudoMat" />
-
-        <TextView
-            android:id="@+id/txtConteudoPort"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Conteúdo\nPortuguês"
-
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/btnConteudoPort"
-            app:layout_constraintStart_toStartOf="@id/btnConteudoPort"
-            app:layout_constraintTop_toBottomOf="@id/btnConteudoPort" />
-
-        <TextView
-            android:id="@+id/txtRedacao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Redação"
-
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/btnRedacao"
-            app:layout_constraintStart_toStartOf="@id/btnRedacao"
-            app:layout_constraintTop_toBottomOf="@id/btnRedacao" />
-
-        <!-- LINHA 2 -->
-
-        <ImageView
-            android:id="@+id/btnQuestMat"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/bg_botao_conteudo"
-            android:clickable="true"
-            android:contentDescription="Questões de Matemática"
-            android:focusable="true"
-
-            android:foreground="?attr/selectableItemBackground"
-            android:padding="16dp"
-            android:src="@drawable/ic_questoesmat"
-            app:layout_constraintEnd_toStartOf="@id/btnQuestPort"
-            app:layout_constraintHorizontal_chainStyle="spread"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtConteudoMat"
-            app:tint="@android:color/white" />
-
-        <!-- TEXTOS LINHA 2 -->
-
-        <ImageView
-            android:id="@+id/btnQuestPort"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:layout_marginTop="52dp"
-            android:background="@drawable/bg_botao_conteudo"
-            android:clickable="true"
-            android:contentDescription="Questões de Português"
-            android:focusable="true"
-
-            android:foreground="?attr/selectableItemBackground"
-            android:padding="16dp"
-
-            android:src="@drawable/ic_questoesport"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btnQuestMat"
-            app:layout_constraintTop_toBottomOf="@+id/txtRedacao"
-            app:tint="@android:color/white" />
+            app:layout_constraintTop_toTopOf="@id/btnQuestMat"
+            app:tint="@android:color/white"/>
 
         <TextView
             android:id="@+id/txtQuestMat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Questões\nMatemática"
-
+            android:text="Questões&#10;Matemática"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/btnQuestMat"
+            app:layout_constraintTop_toBottomOf="@id/btnQuestMat"
             app:layout_constraintStart_toStartOf="@id/btnQuestMat"
-            app:layout_constraintTop_toBottomOf="@id/btnQuestMat" />
+            app:layout_constraintEnd_toEndOf="@id/btnQuestMat"/>
 
         <TextView
             android:id="@+id/txtQuestPort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="Questões\nPortuguês"
-
+            android:text="Questões&#10;Português"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@id/btnQuestPort"
+            app:layout_constraintTop_toBottomOf="@id/btnQuestPort"
             app:layout_constraintStart_toStartOf="@id/btnQuestPort"
-            app:layout_constraintTop_toBottomOf="@id/btnQuestPort" />
+            app:layout_constraintEnd_toEndOf="@id/btnQuestPort"/>
 
+        <TextView
+            android:id="@+id/txtRedacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Redação"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/btnRedacao"
+            app:layout_constraintStart_toStartOf="@id/btnRedacao"
+            app:layout_constraintEnd_toEndOf="@id/btnRedacao"/>
 
         <View
             android:id="@+id/footer"
