@@ -64,9 +64,6 @@
             android:name=".TelaSecaoConteudoPort"
             android:exported="false" />
         <activity
-            android:name=".detalhes_conteudos"
-            android:exported="false" />
-        <activity
             android:name=".PerfilUsuario"
             android:exported="false" />
         <activity

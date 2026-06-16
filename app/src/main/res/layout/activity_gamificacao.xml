@@ -367,7 +367,7 @@
         app:layout_constraintEnd_toStartOf="@id/btnDesempenho"
         app:layout_constraintStart_toStartOf="@id/footer"
         app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
+        app:tint="#FFFFFF" />
 
     <ImageButton
         android:id="@+id/btnDesempenho"
@@ -380,7 +380,7 @@
         app:layout_constraintEnd_toStartOf="@id/btnBuscar"
         app:layout_constraintStart_toEndOf="@id/btnHome"
         app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
+        app:tint="#FFFFFF" />
 
     <ImageButton
         android:id="@+id/btnBuscar"
@@ -393,7 +393,7 @@
         app:layout_constraintEnd_toStartOf="@id/btnPerfil"
         app:layout_constraintStart_toEndOf="@id/btnDesempenho"
         app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
+        app:tint="#3A1E6C" />
 
     <ImageButton
         android:id="@+id/btnPerfil"
@@ -406,6 +406,6 @@
         app:layout_constraintEnd_toEndOf="@id/footer"
         app:layout_constraintStart_toEndOf="@id/btnBuscar"
         app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
+        app:tint="#FFFFFF" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

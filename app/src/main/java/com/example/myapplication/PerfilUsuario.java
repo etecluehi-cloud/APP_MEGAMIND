@@ -184,12 +184,9 @@ public class PerfilUsuario extends AppCompatActivity
             }
         });
 
-        lnlFaleConosco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(PerfilUsuario.this, FaleConosco.class);
-                startActivity(it);
-            }
+        lnlFaleConosco.setOnClickListener(v -> {
+            Intent intent = new Intent(PerfilUsuario.this, FaleConosco.class);
+            startActivity(intent);
         });
 
         // eventos do botoes do footer

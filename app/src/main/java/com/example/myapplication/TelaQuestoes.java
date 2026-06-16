@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -67,6 +68,9 @@ public class TelaQuestoes extends AppCompatActivity {
         btnVoltar         = findViewById(R.id.btnVoltar);
 
         String conteudoId = getIntent().getStringExtra("conteudoId");
+        if (conteudoId == null || conteudoId.isEmpty()) {
+            conteudoId = getIntent().getStringExtra("conteudo_id");
+        }
 
         // ── Detecta modo bloco ───────────────────────────────────────────────
         modoBloco = getIntent().getBooleanExtra("bloco_gamificacao", false);
@@ -237,16 +241,32 @@ public class TelaQuestoes extends AppCompatActivity {
                     update.put("pontos", novosPontos);
                     update.put("streak", novoStreak);
                     if (acertouMinimo) update.put("ultimoBlocoData", hoje);
+                    String nomeUsuario = doc.getString("nome");
+                    if (nomeUsuario == null || nomeUsuario.isEmpty()) {
+                        nomeUsuario = user.getDisplayName();
+                    }
+                    if (nomeUsuario == null || nomeUsuario.isEmpty()) {
+                        nomeUsuario = "Sem nome";
+                    }
+
+                    java.util.Map<String, Object> ranking = new java.util.HashMap<>();
+                    ranking.put("nome", nomeUsuario);
+                    ranking.put("pontos", novosPontos);
 
                     db.collection("usuarios").document(user.getUid())
                             .update(update)
                             .addOnCompleteListener(task -> {
-                                Intent it = new Intent(TelaQuestoes.this, Gamificacao.class);
-                                it.putExtra("bloco_concluido", true);
-                                it.putExtra("acertos_bloco", totalAcertos);
-                                it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(it);
-                                finish();
+                                db.collection("ranking")
+                                        .document(user.getUid())
+                                        .set(ranking, SetOptions.merge())
+                                        .addOnCompleteListener(rankingTask -> {
+                                            Intent it = new Intent(TelaQuestoes.this, Gamificacao.class);
+                                            it.putExtra("bloco_concluido", true);
+                                            it.putExtra("acertos_bloco", totalAcertos);
+                                            it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(it);
+                                            finish();
+                                        });
                             });
                 });
     }
