@@ -18,7 +18,7 @@
         <View
             android:id="@+id/header"
             android:layout_width="0dp"
-            android:layout_height="140dp"
+            android:layout_height="135dp"
             android:background="@drawable/bg_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -153,31 +153,34 @@
             android:id="@+id/txtConteudoMat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="Conteúdo&#10;Matemática"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/btnConteudoMat"
+            app:layout_constraintEnd_toEndOf="@id/btnConteudoMat"
             app:layout_constraintStart_toStartOf="@id/btnConteudoMat"
-            app:layout_constraintEnd_toEndOf="@id/btnConteudoMat"/>
+            app:layout_constraintTop_toBottomOf="@id/btnConteudoMat" />
 
         <TextView
             android:id="@+id/txtConteudoPort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="Conteúdo&#10;Português"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/btnConteudoPort"
+            app:layout_constraintEnd_toEndOf="@id/btnConteudoPort"
             app:layout_constraintStart_toStartOf="@id/btnConteudoPort"
-            app:layout_constraintEnd_toEndOf="@id/btnConteudoPort"/>
+            app:layout_constraintTop_toBottomOf="@id/btnConteudoPort" />
 
         <TextView
             android:id="@+id/txtConteudoRed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="Conteúdo&#10;Redação"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/btnConteudoRed"
+            app:layout_constraintEnd_toEndOf="@id/btnConteudoRed"
             app:layout_constraintStart_toStartOf="@id/btnConteudoRed"
-            app:layout_constraintEnd_toEndOf="@id/btnConteudoRed"/>
+            app:layout_constraintTop_toBottomOf="@id/btnConteudoRed" />
 
 
         <!-- SEGUNDA LINHA -->
@@ -224,31 +227,34 @@
             android:id="@+id/txtQuestMat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="Questões&#10;Matemática"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/btnQuestMat"
+            app:layout_constraintEnd_toEndOf="@id/btnQuestMat"
             app:layout_constraintStart_toStartOf="@id/btnQuestMat"
-            app:layout_constraintEnd_toEndOf="@id/btnQuestMat"/>
+            app:layout_constraintTop_toBottomOf="@id/btnQuestMat" />
 
         <TextView
             android:id="@+id/txtQuestPort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="Questões&#10;Português"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/btnQuestPort"
+            app:layout_constraintEnd_toEndOf="@id/btnQuestPort"
             app:layout_constraintStart_toStartOf="@id/btnQuestPort"
-            app:layout_constraintEnd_toEndOf="@id/btnQuestPort"/>
+            app:layout_constraintTop_toBottomOf="@id/btnQuestPort" />
 
         <TextView
             android:id="@+id/txtRedacao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
             android:text="Redação"
             android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@id/btnRedacao"
+            app:layout_constraintEnd_toEndOf="@id/btnRedacao"
             app:layout_constraintStart_toStartOf="@id/btnRedacao"
-            app:layout_constraintEnd_toEndOf="@id/btnRedacao"/>
+            app:layout_constraintTop_toBottomOf="@id/btnRedacao" />
 
         <View
             android:id="@+id/footer"

@@ -34,25 +34,27 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
                 android:text="Português"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginEnd="40dp" />
+                android:textStyle="bold" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:paddingStart="16dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
             android:text="ESCOLHA UM TEMA"
             android:textColor="#999999"
-            android:textSize="11sp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="8dp" />
+            android:textSize="11sp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardInterpretacaoTexto"
@@ -68,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="📖  Interpretação de Texto"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -87,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="💡  Figuras de Linguagem"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -106,6 +110,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="📢  Funções da Linguagem"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -125,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="🗣️  Variação Linguística"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -144,6 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="📰  Gêneros Textuais"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -163,6 +170,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="🖼️  Linguagem Verbal e Não Verbal"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -182,6 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="🔗  Intertextualidade"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -201,6 +210,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="🧠  Denotação e Conotação"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -220,6 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="📚  Literatura"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -239,6 +250,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
                 android:text="✍️  Gramática"
                 android:textSize="14sp"
                 android:textStyle="bold" />
