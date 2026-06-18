@@ -261,14 +261,16 @@ public class Gamificacao extends AppCompatActivity {
         TextView tvPos = new TextView(this);
         tvPos.setText(posStr);
         tvPos.setTextSize(14);
-        tvPos.setTextColor(Color.parseColor("#9CA3AF"));
+        tvPos.setTextColor(getResources().getColor(R.color.texto_ranking));
         tvPos.setMinWidth(dp(40));
         linha.addView(tvPos);
 
         TextView tvNome = new TextView(this);
         tvNome.setText(souEu ? nome + " (você)" : nome);
         tvNome.setTextSize(14);
-        tvNome.setTextColor(souEu ? Color.parseColor("#7C3AED") : Color.parseColor("#111111"));
+        tvNome.setTextColor(souEu
+                ? Color.parseColor("#7C3AED")
+                : getResources().getColor(R.color.texto_ranking));
         if (souEu) tvNome.setTypeface(null, Typeface.BOLD);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 0, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
@@ -278,7 +280,7 @@ public class Gamificacao extends AppCompatActivity {
         TextView tvPts = new TextView(this);
         tvPts.setText(pts + " xp");
         tvPts.setTextSize(12);
-        tvPts.setTextColor(Color.parseColor("#9CA3AF"));
+        tvPts.setTextColor(getResources().getColor(R.color.texto_ranking));
         linha.addView(tvPts);
 
         layoutRanking.addView(linha);

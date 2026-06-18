@@ -16,4 +16,9 @@
     <color name="cor_texto">#212121</color>
     <color name="icone_selecionado">#FFFFFFFF</color>
     <color name="cor_card">#FFFFFF</color>
+
+    <color name="texto_ranking">#111111</color>
+
+    <color name="texto_principal">#000000</color>
+    <color name="texto_secundario">#666666</color>
 </resources>

@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:text="Meu Progresso"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/texto_principal"
             android:textSize="22sp" />
 
         <!-- Subtítulo dinâmico com o nome -->
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:text="NÍVEL"
-                android:textColor="#7C3AED"
+                android:textColor="@color/texto_principal"
                 android:textSize="12sp"
                 android:layout_marginBottom="6dp" />
 
@@ -106,7 +106,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/poppins_bold"
                             android:text="Nível 1"
-                            android:textColor="#7C3AED"
+                            android:textColor="@color/texto_principal"
                             android:textSize="16sp" />
 
                         <TextView
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:text="DIAS SEGUIDOS"
-                android:textColor="#7C3AED"
+                android:textColor="@color/texto_principal"
                 android:textSize="12sp"
                 android:layout_marginBottom="6dp" />
 
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:text="RANKING SEMANAL"
-                android:textColor="#7C3AED"
+                android:textColor="@color/texto_principal"
                 android:textSize="12sp"
                 android:layout_marginBottom="6dp" />
 
@@ -229,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:text="BLOCO DE QUESTÕES"
-                android:textColor="#7C3AED"
+                android:textColor="@color/texto_principal"
                 android:textSize="12sp"
                 android:layout_marginBottom="10dp" />
 
@@ -263,7 +263,7 @@
                             android:layout_height="wrap_content"
                             android:text="🧮  Matemática"
                             android:fontFamily="@font/poppins_bold"
-                            android:textColor="#FFFFFF"
+                            android:textColor="@color/texto_principal"
                             android:textSize="17sp"
                             android:layout_marginBottom="4dp" />
 
@@ -281,7 +281,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="→"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/texto_principal"
                         android:textSize="22sp"
                         android:layout_marginStart="12dp" />
 
@@ -318,7 +318,7 @@
                             android:layout_height="wrap_content"
                             android:text="📖  Português"
                             android:fontFamily="@font/poppins_bold"
-                            android:textColor="#FFFFFF"
+                            android:textColor="@color/texto_principal"
                             android:textSize="17sp"
                             android:layout_marginBottom="4dp" />
 
@@ -336,7 +336,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="→"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/texto_principal"
                         android:textSize="22sp"
                         android:layout_marginStart="12dp" />
 

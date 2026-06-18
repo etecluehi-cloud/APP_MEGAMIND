@@ -11,8 +11,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Header roxo -->
+        <!-- HEADER -->
         <LinearLayout
+            android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#7B2FBE"
@@ -47,177 +48,439 @@
         </LinearLayout>
 
         <!-- Subtítulo -->
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/poppins_medium"
             android:paddingStart="16dp"
-            android:paddingTop="20dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="16dp"
             android:paddingBottom="8dp"
-            android:text="ESCOLHA UM TEMA"
-            android:textColor="#999999"
-            android:textSize="11sp" />
+            android:text="Escolha um conteúdo"
+            android:textColor="#7B2FBE"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <!-- Estrutura do Texto -->
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardEstruturaTexto"
+        <!-- GRID DOS CARDS -->
+        <GridLayout
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="24dp"
+            android:useDefaultMargins="true">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="📝 Estrutura do Texto"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+            <!-- Card 1: Estrutura do Texto -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEstruturaTexto"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-        </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:id="@+id/lnlEstruturaTexto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#7B2FBE"
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-        <!-- Tipologia Textual -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardTipologiaTextual"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins"
+                        android:text="Estrutura\ndo Texto"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="📄 Tipologia Textual"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                    <ProgressBar
+                        android:id="@+id/progEstruturaTexto"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
 
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/txtProgEstruturaTexto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
 
-        <!-- Competências do ENEM -->
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardCompetencias"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            <!-- Card 2: Tipologia Textual -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTipologiaTextual"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="🎯 Competências do ENEM"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                <LinearLayout
+                    android:id="@+id/lnlTipologiaTextual"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#9B59B6"
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
 
-        <!-- Argumentação -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Tipologia\nTextual"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardArgumentacao"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+                    <ProgressBar
+                        android:id="@+id/progTipologiaTextual"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="💬 Argumentação"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtProgTipologiaTextual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
 
-        </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        <!-- Proposta de Intervenção -->
+            <!-- Card 3: Competências do ENEM -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCompetencias"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardPropostaIntervencao"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+                <LinearLayout
+                    android:id="@+id/lnlCompetencias"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#7B2FBE"
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="📌 Proposta de Intervenção"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
 
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Competências\ndo ENEM"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
 
-        <!-- Temas Sociais -->
+                    <ProgressBar
+                        android:id="@+id/progCompetenciasEnem"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardTemasSociais"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="8dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+                    <TextView
+                        android:id="@+id/txtProgCompetenciasEnem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="🌎 Temas Sociais Frequentes"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
+            <!-- Card 4: Argumentação -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardArgumentacao"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
 
-        <!-- Erros que Zeram -->
+                <LinearLayout
+                    android:id="@+id/lnlArgumentacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#9B59B6"
+                    android:orientation="vertical"
+                    android:padding="14dp">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardErrosZeram"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginBottom="24dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_medium"
-                android:text="❌ Erros que Zeram a Nota"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Argumentação"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
 
-        </androidx.cardview.widget.CardView>
+                    <ProgressBar
+                        android:id="@+id/progArgumentacao"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txtProgArgumentacao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 5: Proposta de Intervenção -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPropostaIntervencao"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlPropostaIntervencao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#7B2FBE"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Proposta de\nIntervenção"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <ProgressBar
+                        android:id="@+id/progPropostaIntervencao"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txtProgPropostaIntervencao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 6: Temas Sociais -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTemasSociais"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlTemasSociais"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#9B59B6"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Temas Sociais\nFrequentes"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <ProgressBar
+                        android:id="@+id/progTemasSociais"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txtProgTemasSociais"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card 7: Erros que Zeram -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardErrosZeram"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:id="@+id/lnlErrosZeram"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#7B2FBE"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        android:text="Erros que\nZeram a Nota"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_weight="1" />
+
+                    <ProgressBar
+                        android:id="@+id/progErrosZeram"
+                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginTop="10dp"
+                        android:progress="0"
+                        android:max="100"
+                        android:progressTint="#FFD700"
+                        android:progressBackgroundTint="#33FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txtProgErrosZeram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="0 de 1 vídeos"
+                        android:textColor="#AAFFFFFF"
+                        android:textSize="9sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
     </LinearLayout>
 </ScrollView>

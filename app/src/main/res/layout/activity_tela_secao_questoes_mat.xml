@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F8F1FF">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="?android:attr/windowBackground">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingBottom="18dp">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_header" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="16dp" android:paddingTop="48dp" android:paddingEnd="16dp" android:paddingBottom="18dp">
             <ImageButton android:id="@+id/btnVoltar" android:layout_width="50dp" android:layout_height="50dp" android:background="?attr/selectableItemBackgroundBorderless" android:contentDescription="Voltar" android:src="@drawable/baseline_arrow_back_24" app:tint="#FFFFFF" />
@@ -8,7 +8,7 @@
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins" android:text="Escolha um tema para praticar" android:textColor="#E9D7FF" android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:paddingStart="20dp" android:paddingTop="20dp" android:paddingEnd="20dp" android:paddingBottom="10dp" android:text="TEMAS DISPONIVEIS" android:textColor="#7B3FE4" android:textSize="12sp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:paddingStart="20dp" android:paddingTop="20dp" android:paddingEnd="20dp" android:paddingBottom="10dp" android:text="TEMAS DISPONIVEIS" android:textColor="@color/cor_texto" android:textSize="12sp" />
         <androidx.cardview.widget.CardView
             android:id="@+id/cardGeometriaPlana"
             android:layout_width="match_parent"
@@ -17,14 +17,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Geometria plana" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Angulos, areas e figuras" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Geometria plana" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Angulos, areas e figuras" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -37,14 +37,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Geometria espacial" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Solidos, volume e superficie" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Geometria espacial" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Solidos, volume e superficie" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -57,14 +57,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Funcoes" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Graficos, dominio e imagem" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Funcoes" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Graficos, dominio e imagem" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -77,14 +77,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Estatistica" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Medias, tabelas e graficos" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Estatistica" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Medias, tabelas e graficos" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -97,14 +97,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Probabilidade" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Eventos e possibilidades" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Probabilidade" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Eventos e possibilidades" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -117,14 +117,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Analise combinatoria" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Arranjos e combinacoes" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Analise combinatoria" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Arranjos e combinacoes" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -137,14 +137,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Razao e proporcao" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Escalas e comparacoes" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Razao e proporcao" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Escalas e comparacoes" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -157,14 +157,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Regra de tres" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Proporcionalidade na pratica" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Regra de tres" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Proporcionalidade na pratica" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -177,14 +177,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Porcentagem" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Aumentos, descontos e taxas" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Porcentagem" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Aumentos, descontos e taxas" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -197,14 +197,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Matematica financeira" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Juros e operacoes financeiras" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Matematica financeira" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Juros e operacoes financeiras" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -217,14 +217,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Trigonometria" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Triangulos e relacoes metricas" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Trigonometria" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Triangulos e relacoes metricas" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -237,14 +237,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Matrizes" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Organizacao e operacoes" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Matrizes" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Organizacao e operacoes" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
@@ -257,14 +257,14 @@
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="10dp"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="#FFFFFF"
+            app:cardBackgroundColor="@color/cor_card"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center_vertical" android:orientation="horizontal" android:paddingStart="14dp" android:paddingEnd="14dp">
                 <View android:layout_width="6dp" android:layout_height="44dp" android:background="@drawable/bg_roxo" />
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_weight="1" android:orientation="vertical">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Sistemas lineares" android:textColor="#2B173F" android:textSize="14sp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Equacoes com varias incognitas" android:textColor="#8F7BA8" android:textSize="11sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:fontFamily="@font/poppins_bold" android:text="Sistemas lineares" android:textColor="@color/cor_texto" android:textSize="14sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:fontFamily="@font/poppins" android:text="Equacoes com varias incognitas" android:textColor="@color/cor_texto" android:textSize="11sp" />
                 </LinearLayout>
                 <TextView android:layout_width="30dp" android:layout_height="30dp" android:background="@drawable/bg_circulo_roxo" android:fontFamily="@font/poppins_bold" android:gravity="center" android:text=">" android:textColor="#FFFFFF" android:textSize="18sp" />
             </LinearLayout>
