@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
             android:text="Meu Progresso"
-            android:textColor="@color/texto_principal"
+            android:textColor="@color/white"
             android:textSize="22sp" />
 
         <!-- Subtítulo dinâmico com o nome -->

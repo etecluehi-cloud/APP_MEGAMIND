@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.PickVisualMediaRequest;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -35,44 +36,13 @@ import java.util.Map;
 public class EditarPerfil extends AppCompatActivity {
 
     ImageButton btnVoltar;
-
-    LinearLayout lnlAlterarFoto,
-            lnlEditarNome,
-            lnlEditarSenha,
-            lnlExcluirConta;
-
-    TextView txtNomeAtual,
-            txtEmailAtual,
-            txtIniciais,
-            txtNomeFoto;
-
+    LinearLayout lnlAlterarFoto, lnlEditarNome, lnlEditarSenha, lnlExcluirConta;
+    TextView txtNomeAtual, txtEmailAtual, txtIniciais, txtNomeFoto;
     ImageView imgFotoPerfil;
-
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-
     String userId;
-
-    // =========================
-    // GALERIA
-    // =========================
-
-    ActivityResultLauncher<Intent> galeriaLauncher =
-            registerForActivityResult(
-                    new ActivityResultContracts.StartActivityForResult(),
-
-                    result -> {
-
-                        if (result.getResultCode() == RESULT_OK
-                                && result.getData() != null) {
-
-                            Uri imagemSelecionada =
-                                    result.getData().getData();
-
-                            abrirCrop(imagemSelecionada);
-                        }
-                    }
-            );
+    ActivityResultLauncher<PickVisualMediaRequest> photoPicker;
 
     // =========================
     // CROP
@@ -135,12 +105,26 @@ public class EditarPerfil extends AppCompatActivity {
 
         btnVoltar.setOnClickListener(v -> finish());
 
+        photoPicker = registerForActivityResult(
+                new ActivityResultContracts.PickVisualMedia(),
+                uri -> {
+                    if (uri != null) {
+                        abrirCrop(uri);
+                    }
+                }
+        );
+
         carregarDados();
 
         // alterar foto
 
         lnlAlterarFoto.setOnClickListener(v ->
-                solicitarPermissaoGaleria());
+                photoPicker.launch(
+                        new PickVisualMediaRequest.Builder()
+                                .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
+                                .build()
+                )
+        );
 
         // editar nome
 
@@ -164,85 +148,6 @@ public class EditarPerfil extends AppCompatActivity {
 
         lnlExcluirConta.setOnClickListener(v ->
                 dialogExcluirConta());
-    }
-
-    // =====================================
-    // PERMISSÃO
-    // =====================================
-
-    private void solicitarPermissaoGaleria() {
-
-        String permissao;
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-
-            permissao = Manifest.permission.READ_MEDIA_IMAGES;
-
-        } else {
-
-            permissao = Manifest.permission.READ_EXTERNAL_STORAGE;
-        }
-
-        if (ContextCompat.checkSelfPermission(
-                this,
-                permissao
-        ) != PackageManager.PERMISSION_GRANTED) {
-
-            ActivityCompat.requestPermissions(
-                    this,
-                    new String[]{permissao},
-                    100
-            );
-
-        } else {
-
-            abrirGaleria();
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(
-            int requestCode,
-            String[] permissions,
-            int[] grantResults
-    ) {
-
-        super.onRequestPermissionsResult(
-                requestCode,
-                permissions,
-                grantResults
-        );
-
-        if (requestCode == 100) {
-
-            if (grantResults.length > 0
-                    && grantResults[0]
-                    == PackageManager.PERMISSION_GRANTED) {
-
-                abrirGaleria();
-
-            } else {
-
-                Toast.makeText(
-                        this,
-                        "Permissão negada",
-                        Toast.LENGTH_SHORT
-                ).show();
-            }
-        }
-    }
-
-    // =====================================
-    // ABRIR GALERIA
-    // =====================================
-
-    private void abrirGaleria() {
-
-        Intent intent = new Intent(Intent.ACTION_PICK);
-
-        intent.setType("image/*");
-
-        galeriaLauncher.launch(intent);
     }
 
     // =====================================
