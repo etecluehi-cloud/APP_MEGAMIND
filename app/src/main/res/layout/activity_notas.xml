@@ -84,7 +84,7 @@
         android:fontFamily="@font/poppins"
         android:text="📝 Nenhuma redação salva ainda.\nEscreva sua primeira redação!"
         android:textAlignment="center"
-        android:textColor="#AAAAAA"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/footer"

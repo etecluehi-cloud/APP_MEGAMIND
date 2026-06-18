@@ -24,6 +24,7 @@ public class TelaRedacao extends AppCompatActivity {
 
     // Declaração das variáveis de tela
     private EditText edtRedacao;
+    private EditText inputTema;
     private TextView txtLinhasContagem;
     private Button btnSalvarRedacao;
     private Button btnNotas;
@@ -43,6 +44,7 @@ public class TelaRedacao extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         //linkando
+        inputTema = findViewById(R.id.inputTema);
         edtRedacao = findViewById(R.id.edtRedacao);
         txtLinhasContagem = findViewById(R.id.txtLinhasContagem);
         btnSalvarRedacao = findViewById(R.id.btnSalvarRedacao);
@@ -81,16 +83,19 @@ public class TelaRedacao extends AppCompatActivity {
         });
 
         btnSalvarRedacao.setOnClickListener(v -> salvarRedacao());
-
-        // Footer Navigation
-        configurarFooter();
     }
 
     // Método que esta salvando a redação no firestore
     private void salvarRedacao() {
+        String temaAtual = inputTema.getText().toString().trim();
         String textoRedacao = edtRedacao.getText().toString().trim();
 
         // Validação básica
+        if (temaAtual.isEmpty()) {
+            Toast.makeText(this, "Digite o tema da sua redação!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if (textoRedacao.isEmpty()) {
             Toast.makeText(this, "Escreva sua redação antes de salvar!", Toast.LENGTH_SHORT).show();
             return;
@@ -108,11 +113,7 @@ public class TelaRedacao extends AppCompatActivity {
             return;
         }
         String userId = auth.getCurrentUser().getUid();
-
-        // Pega o tema atual
-        String temaAtual = "A importância da educação financeira nas escolas brasileiras";
-
-        // Data e hora atual formatada
+// Data e hora atual formatada
         String dataHora = new SimpleDateFormat("dd/MM/yyyy • HH'h'mm", Locale.getDefault()).format(new Date());
 
         // Monta o objeto (Map) que será salvo no Firestore
@@ -134,6 +135,7 @@ public class TelaRedacao extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
                     // if der certo
                     Toast.makeText(this, "Redação salva com sucesso MegaMinder!", Toast.LENGTH_SHORT).show();
+                    inputTema.setText("");
                     edtRedacao.setText(""); // limpa o campo
                     btnSalvarRedacao.setEnabled(true);
                     btnSalvarRedacao.setText("💾 Salvar Redação");
@@ -145,19 +147,5 @@ public class TelaRedacao extends AppCompatActivity {
                     btnSalvarRedacao.setText("💾 Salvar Redação");
                 });
     }
-
-    // nav do footer
-    private void configurarFooter() {
-        ImageButton btnHome = findViewById(R.id.btnHome);
-        ImageButton btnDesempenho = findViewById(R.id.btnDesempenho);
-        ImageButton btnBuscar = findViewById(R.id.btnBuscar);
-        ImageButton btnPerfil = findViewById(R.id.btnPerfil);
-
-        btnHome.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Home.class); // ⚠️ troque "Home" pelo nome da sua Activity home
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-        });
-
-    }
 }
+

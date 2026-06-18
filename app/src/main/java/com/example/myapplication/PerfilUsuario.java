@@ -43,6 +43,16 @@ public class PerfilUsuario extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        AppCompatDelegate.setDefaultNightMode(
+                getSharedPreferences("config", MODE_PRIVATE)
+                        .getBoolean("modo_escuro", false)
+                        ? AppCompatDelegate.MODE_NIGHT_YES
+                        : AppCompatDelegate.MODE_NIGHT_NO
+        );
+
+        setContentView(R.layout.activity_perfil_usuario);
+
         setContentView(R.layout.activity_perfil_usuario);
 
         // 2) linkando elementos
@@ -63,36 +73,33 @@ public class PerfilUsuario extends AppCompatActivity
         btnBuscar = (ImageButton) findViewById(R.id.btnBuscar);
         btnPerfil = (ImageButton) findViewById(R.id.btnPerfil);
 
+        if (mAuth.getCurrentUser() == null) {
+            finish();
+            return;
+        }
+
         String userId = mAuth.getCurrentUser().getUid();
 
         boolean modoEscuroSalvo = getSharedPreferences("config", MODE_PRIVATE)
                 .getBoolean("modo_escuro", false);
 
-        switchModoEscuro.setChecked(modoEscuroSalvo);
+        // Desabilita o listener temporariamente
+        switchModoEscuro.setOnCheckedChangeListener(null);
 
-        if (modoEscuroSalvo) {
-            switchModoEscuro.getTrackDrawable().setTint(Color.parseColor("#4CAF50"));
-        } else {
-            switchModoEscuro.getTrackDrawable().setTint(Color.parseColor("#E53935"));
-        }
-
-        // Quando o usuário mexe no switch
         switchModoEscuro.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            // Salva a preferência
+
+            atualizarCorSwitch(isChecked);
+
             getSharedPreferences("config", MODE_PRIVATE)
                     .edit()
                     .putBoolean("modo_escuro", isChecked)
                     .apply();
 
-            // Aplica o tema
-            if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-            }
-
-            // Aguarda 400ms antes de recriar — evita piscar se mexer rápido
-            switchModoEscuro.postDelayed(() -> recreate(), 400);
+            AppCompatDelegate.setDefaultNightMode(
+                    isChecked
+                            ? AppCompatDelegate.MODE_NIGHT_YES
+                            : AppCompatDelegate.MODE_NIGHT_NO
+            );
         });
 
         Switch switchNotificacoes = findViewById(R.id.switchNotifica);
@@ -121,8 +128,7 @@ public class PerfilUsuario extends AppCompatActivity
                     .putBoolean("notificacoes", isChecked)
                     .apply();
 
-            // Aguarda 400ms antes de recriar
-            switchNotificacoes.postDelayed(() -> recreate(), 400);
+            configurarNotificacoes(isChecked);
         });
 
         db.collection("usuarios")
@@ -184,12 +190,9 @@ public class PerfilUsuario extends AppCompatActivity
             }
         });
 
-        lnlFaleConosco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(PerfilUsuario.this, FaleConosco.class);
-                startActivity(it);
-            }
+        lnlFaleConosco.setOnClickListener(v -> {
+            Intent intent = new Intent(PerfilUsuario.this, FaleConosco.class);
+            startActivity(intent);
         });
 
         // eventos do botoes do footer
@@ -222,16 +225,16 @@ public class PerfilUsuario extends AppCompatActivity
                 startActivity(it);
             }
         });
+    }
 
-        btnPerfil.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent it = new Intent(PerfilUsuario.this, PerfilUsuario.class);
-                startActivity(it);
-            }
-        });
+    private void atualizarCorSwitch(boolean ativo) {
+        if (ativo) {
+            switchModoEscuro.getTrackDrawable()
+                    .setTint(Color.parseColor("#4CAF50"));
+        } else {
+            switchModoEscuro.getTrackDrawable()
+                    .setTint(Color.parseColor("#E53935"));
+        }
     }
 
     private void configurarNotificacoes(boolean ativar) {

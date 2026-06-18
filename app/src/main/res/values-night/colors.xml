@@ -3,4 +3,9 @@
     <color name="cor_fundo">#121212</color>
     <color name="cor_texto">#FFFFFF</color>
     <color name="cor_card">#1E1E1E</color>
+
+    <color name="texto_ranking">#FFFFFF</color>
+
+    <color name="texto_principal">#FFFFFF</color>
+    <color name="texto_secundario">#CCCCCC</color>
 </resources>

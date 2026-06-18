@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/cor_fundo">
 
     <!-- Botão Voltar -->
     <ImageButton
@@ -15,6 +15,7 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Voltar"
         app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/cor_texto"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
@@ -23,13 +24,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Metas Diárias"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/btnVoltar"
+        android:textColor="@color/cor_texto"
         app:layout_constraintBottom_toBottomOf="@id/btnVoltar"
         app:layout_constraintStart_toEndOf="@id/btnVoltar"
-        android:layout_marginStart="8dp"/>
+        app:layout_constraintTop_toTopOf="@id/btnVoltar" />
 
     <!-- Texto lista vazia -->
     <TextView
@@ -38,7 +41,7 @@
         android:layout_height="wrap_content"
         android:text="Nenhuma meta cadastrada ainda."
         android:textSize="16sp"
-        android:textColor="#888888"
+        android:textColor="@color/cor_texto"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

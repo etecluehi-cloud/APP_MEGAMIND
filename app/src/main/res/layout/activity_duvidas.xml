@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F0FF">
+    android:background="@color/cor_fundo">
 
     <!-- HEADER -->
     <View
@@ -66,7 +66,7 @@
                 android:layout_marginBottom="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF">
+                app:cardBackgroundColor="@color/cor_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -88,7 +88,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_bold"
                             android:text="Como funciona o sistema de pontos?"
-                            android:textColor="#4A4A4A"
+                            android:textColor="@color/cor_texto"
                             android:textSize="14sp" />
 
                         <TextView
@@ -109,7 +109,7 @@
                         android:paddingEnd="12dp"
                         android:paddingBottom="12dp"
                         android:text="Você ganha pontos ao fazer login diário, responder questões corretamente e completar conteúdos. Quanto mais você usa o app, mais pontos acumula!"
-                        android:textColor="#666666"
+                        android:textColor="@color/cor_texto"
                         android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>
@@ -122,7 +122,7 @@
                 android:layout_marginBottom="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF">
+                app:cardBackgroundColor="@color/cor_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -144,7 +144,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_bold"
                             android:text="O que é o Streak de dias?"
-                            android:textColor="#4A4A4A"
+                            android:textColor="@color/cor_texto"
                             android:textSize="14sp" />
 
                         <TextView
@@ -165,7 +165,7 @@
                         android:paddingEnd="12dp"
                         android:paddingBottom="12dp"
                         android:text="O streak conta quantos dias seguidos você acessa o aplicativo. Manter uma sequência alta demonstra dedicação aos estudos. Não perca o ritmo!"
-                        android:textColor="#666666"
+                        android:textColor="@color/cor_texto"
                         android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>
@@ -178,7 +178,7 @@
                 android:layout_marginBottom="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF">
+                app:cardBackgroundColor="@color/cor_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -200,7 +200,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_bold"
                             android:text="Como altero minha foto de perfil?"
-                            android:textColor="#4A4A4A"
+                            android:textColor="@color/cor_texto"
                             android:textSize="14sp" />
 
                         <TextView
@@ -221,7 +221,7 @@
                         android:paddingEnd="12dp"
                         android:paddingBottom="12dp"
                         android:text="Acesse a tela de Perfil clicando no ícone de pessoa no menu inferior. Lá você pode atualizar sua foto e informações pessoais."
-                        android:textColor="#666666"
+                        android:textColor="@color/cor_texto"
                         android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>
@@ -234,7 +234,7 @@
                 android:layout_marginBottom="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF">
+                app:cardBackgroundColor="@color/cor_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -256,7 +256,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_bold"
                             android:text="O app funciona sem internet?"
-                            android:textColor="#4A4A4A"
+                            android:textColor="@color/cor_texto"
                             android:textSize="14sp" />
 
                         <TextView
@@ -277,7 +277,7 @@
                         android:paddingEnd="12dp"
                         android:paddingBottom="12dp"
                         android:text="Alguns conteúdos podem ser acessados offline, porém para sincronizar seu progresso, salvar pontos e acessar novos conteúdos é necessário conexão com a internet."
-                        android:textColor="#666666"
+                        android:textColor="@color/cor_texto"
                         android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>
@@ -290,7 +290,7 @@
                 android:layout_marginBottom="12dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="3dp"
-                app:cardBackgroundColor="#FFFFFF">
+                app:cardBackgroundColor="@color/cor_card">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -312,7 +312,7 @@
                             android:layout_weight="1"
                             android:fontFamily="@font/poppins_bold"
                             android:text="Como ver meu desempenho nas questões?"
-                            android:textColor="#4A4A4A"
+                            android:textColor="@color/cor_texto"
                             android:textSize="14sp" />
 
                         <TextView
@@ -333,7 +333,7 @@
                         android:paddingEnd="12dp"
                         android:paddingBottom="12dp"
                         android:text="Clique no ícone de gráfico no menu inferior para acessar a tela de Desempenho. Lá você encontra estatísticas detalhadas sobre seus acertos e erros."
-                        android:textColor="#666666"
+                        android:textColor="@color/cor_texto"
                         android:textSize="13sp"
                         android:visibility="gone" />
                 </LinearLayout>

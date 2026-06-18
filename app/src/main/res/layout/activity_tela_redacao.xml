@@ -89,19 +89,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
-                android:text="🎯 TEMA ATUAL"
+                android:text="🎯 TEMA DA REDAÇÃO"
                 android:textColor="#7C3AED"
                 android:textSize="11sp"
                 android:letterSpacing="0.08"/>
 
-            <TextView
-                android:id="@+id/txtTemaAtual"
+            <EditText
+                android:id="@+id/inputTema"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:background="@android:color/transparent"
                 android:fontFamily="@font/poppins_bold"
-                android:text="A importância da educação financeira nas escolas brasileiras"
+                android:hint="Digite o tema sobre o qual você irá escrever..."
+                android:inputType="textCapSentences"
+                android:maxLength="150"
                 android:textColor="@color/cor_texto"
+                android:textColorHint="#BBBBBB"
                 android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -116,7 +120,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins"
         android:text="Mín. 7 linhas • Máx. 30 linhas"
-        android:textColor="#888888"
+        android:textColor="@color/cor_texto"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@id/txtLinhasContagem"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,70 +184,9 @@
         android:text="💾 Salvar Redação"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- FOOTER igual à Home -->
-    <View
-        android:id="@+id/footer"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:background="@drawable/bg_bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnHome"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Início"
-        android:src="@drawable/ic_home"
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintEnd_toStartOf="@id/btnDesempenho"
-        app:layout_constraintStart_toStartOf="@id/footer"
-        app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
-
-    <ImageButton
-        android:id="@+id/btnDesempenho"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Desempenho"
-        android:src="@drawable/ic_desempenho"
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintEnd_toStartOf="@id/btnBuscar"
-        app:layout_constraintStart_toEndOf="@id/btnHome"
-        app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
-
-    <ImageButton
-        android:id="@+id/btnBuscar"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Buscar"
-        android:src="@drawable/ic_buscar"
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintEnd_toStartOf="@id/btnPerfil"
-        app:layout_constraintStart_toEndOf="@id/btnDesempenho"
-        app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
-
-    <ImageButton
-        android:id="@+id/btnPerfil"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="Perfil"
-        android:src="@drawable/ic_user"
-        app:layout_constraintBottom_toBottomOf="@id/footer"
-        app:layout_constraintEnd_toEndOf="@id/footer"
-        app:layout_constraintStart_toEndOf="@id/btnBuscar"
-        app:layout_constraintTop_toTopOf="@id/footer"
-        app:tint="@color/icone_selecionado" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,13 +30,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
             android:layout_weight="1"
+            android:fontFamily="@font/poppins_bold"
             android:gravity="center"
             android:text="Fale conosco"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="40dp"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -61,34 +62,37 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/poppins_medium"
             android:text="NOVA DÚVIDA"
             android:textColor="#7B2FBE"
-            android:textStyle="bold"
             android:textSize="11sp"
-            android:layout_marginBottom="8dp"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtDuvida"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:background="@drawable/bg_campo_senha"
+            android:fontFamily="@font/poppins"
             android:gravity="top|start"
             android:hint="Digite sua dúvida..."
             android:inputType="textMultiLine"
-            android:minLines="5"
             android:maxLines="8"
-            android:padding="12dp"/>
+            android:minLines="5"
+            android:padding="12dp" />
 
         <Button
             android:id="@+id/btnEnviar"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:layout_marginTop="16dp"
+            android:backgroundTint="#7B2FBE"
+            android:fontFamily="@font/poppins_bold"
             android:text="Enviar dúvida"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:backgroundTint="#7B2FBE"
-            app:cornerRadius="12dp"/>
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 </LinearLayout>
