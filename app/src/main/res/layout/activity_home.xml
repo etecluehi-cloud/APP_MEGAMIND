@@ -92,7 +92,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Conteudos"
+            android:text="Conteúdos"
             android:textColor="@color/cor_texto"
             android:textSize="27sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,17 +133,47 @@
 
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
                     <ImageView android:id="@+id/btnConteudoMat" android:layout_width="82dp" android:layout_height="82dp" android:background="@drawable/bg_botao_conteudo" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" android:padding="19dp" android:src="@drawable/ic_calculadora" app:tint="#FFFFFF" />
-                    <TextView android:id="@+id/txtConteudoMat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:fontFamily="@font/poppins" android:gravity="center" android:text="Conteudo\nMatematica" android:textColor="@color/cor_texto" android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/txtConteudoMat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Conteúdo\nMatemática"
+                        android:textColor="@color/cor_texto"
+                        android:textSize="12.5sp" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
                     <ImageView android:id="@+id/btnConteudoPort" android:layout_width="82dp" android:layout_height="82dp" android:background="@drawable/bg_botao_conteudo" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" android:padding="19dp" android:src="@drawable/ic_livro" app:tint="#FFFFFF" />
-                    <TextView android:id="@+id/txtConteudoPort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:fontFamily="@font/poppins" android:gravity="center" android:text="Conteudo\nPortugues" android:textColor="@color/cor_texto" android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/txtConteudoPort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Conteúdo\nPortuguês"
+                        android:textColor="@color/cor_texto"
+                        android:textSize="12.5sp" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
                     <ImageView android:id="@+id/btnConteudoRed" android:layout_width="82dp" android:layout_height="82dp" android:background="@drawable/bg_botao_conteudo" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" android:padding="19dp" android:src="@drawable/ic_redacao" app:tint="#FFFFFF" />
-                    <TextView android:id="@+id/txtConteudoRed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:fontFamily="@font/poppins" android:gravity="center" android:text="Conteudo\nRedacao" android:textColor="@color/cor_texto" android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/txtConteudoRed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Conteúdo\nRedação"
+                        android:textColor="@color/cor_texto"
+                        android:textSize="12.5sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -156,17 +186,47 @@
 
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
                     <ImageView android:id="@+id/btnQuestMat" android:layout_width="82dp" android:layout_height="82dp" android:background="@drawable/bg_botao_conteudo" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" android:padding="19dp" android:src="@drawable/ic_questoesmat" app:tint="#FFFFFF" />
-                    <TextView android:id="@+id/txtQuestMat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:fontFamily="@font/poppins" android:gravity="center" android:text="Questoes\nMatematica" android:textColor="@color/cor_texto" android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/txtQuestMat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Questões\nMatemática"
+                        android:textColor="@color/cor_texto"
+                        android:textSize="12.5sp" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
                     <ImageView android:id="@+id/btnQuestPort" android:layout_width="82dp" android:layout_height="82dp" android:background="@drawable/bg_botao_conteudo" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" android:padding="19dp" android:src="@drawable/ic_questoesport" app:tint="#FFFFFF" />
-                    <TextView android:id="@+id/txtQuestPort" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:fontFamily="@font/poppins" android:gravity="center" android:text="Questoes\nPortugues" android:textColor="@color/cor_texto" android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/txtQuestPort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Questões\nPortuguês"
+                        android:textColor="@color/cor_texto"
+                        android:textSize="12.5sp" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
                     <ImageView android:id="@+id/btnRedacao" android:layout_width="82dp" android:layout_height="82dp" android:background="@drawable/bg_botao_conteudo" android:clickable="true" android:focusable="true" android:foreground="?attr/selectableItemBackground" android:padding="19dp" android:src="@drawable/ic_redacao" app:tint="#FFFFFF" />
-                    <TextView android:id="@+id/txtRedacao" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7dp" android:fontFamily="@font/poppins" android:gravity="center" android:text="Redacao" android:textColor="@color/cor_texto" android:textSize="12.5sp" />
+
+                    <TextView
+                        android:id="@+id/txtRedacao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center"
+                        android:text="Redação"
+                        android:textColor="@color/cor_texto"
+                        android:textSize="12.5sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
